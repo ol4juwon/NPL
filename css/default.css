@@ -1,0 +1,93 @@
+
+
+.nav{
+position: absolute;
+width: 100%;
+height: 80px;
+left: 0px;
+top: 0px;
+
+background: #FFFFFF;}
+
+.nav-logo{
+
+position: absolute;
+width: 56px;
+height: 56px;
+left: 102px;
+top: 12px;
+
+background: #697080;
+}
+
+.spotlight{
+
+    position: absolute;
+width: 100%;
+height: 635px;
+left: 0px;
+top: 80px;
+
+background: linear-gradient(0.87deg, rgba(105, 112, 128, 0.54) 0.69%, rgba(81, 38, 174, 0.28416) 100.48%, rgba(38, 92, 174, 0.00617433) 100.49%, rgba(195, 195, 196, 0.003125) 100.5%, rgba(169, 179, 203, 0.6) 100.51%);
+}
+
+.welcome{
+
+position: absolute;
+
+height: 75px;
+left: 237px;
+top: 397px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 64px;
+line-height: 75px;
+/* identical to box height */
+
+text-align: center;
+
+color: #FFFFFF;
+}
+
+.tagline {
+    position: absolute;
+width: 832px;
+height: 84px;
+left: 304px;
+top: 484px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 36px;
+line-height: 42px;
+text-align: center;
+
+color: #FFFFFF;
+
+}
+
+.search-home{
+
+    position: absolute;
+width: 1049px;
+height: 224px;
+left: 195px;
+top: 599px;
+
+background: #FFFFFF;
+box-shadow: 6px 9px 59px 3px rgba(0, 0, 0, 0.01);
+}
+
+.floater-img{
+    position: absolute;
+width: 1440px;
+height: 635px;
+left: 0px;
+top: 80px;
+
+background: url(../img/homepage.png);
+
+}
