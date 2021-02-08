@@ -20,6 +20,6 @@
          exit();
    
      }else{
-       
+       echo "connect successful";
      }
 ?>

@@ -89,7 +89,7 @@ all your needs</h2>
           <div class="search-container">
             <div class="search-home">
                 <div class="container   ">
-          <form class="form-inline">
+          <form class="form-inline" method="get" action="includes/search.php">
           <div class="form-row">
               <div class="form-group form-edit col-sm-4">
           <label for="inputState">Bedrooms</label>
@@ -109,10 +109,11 @@ all your needs</h2>
 
         <div class="form-row">
                         <div class="form-group form-edit col-sm-4">
-                            <label for="inputState">Category</label>
-                            <select id="inputState" class="form-control">
-                              <option selected>Choose...</option>
-                              <option>...</option>
+                            <label for="category">Category</label>
+                            <select id="category" name="category" class="form-control">
+                              <option disabled>Choose...</option>
+                              <option>rent </option>
+                              <option>sell </option>
                             </select>
                           </div>
                           <div class="form-group form-edit col-sm-2">
@@ -149,10 +150,7 @@ all your needs</h2>
           </div>
           
       </div>
-      
- 
-</div>
-<div class="list-property">
+      <div class="list-property">
                 <div class="list-header">
                     <h3>Latest Listed Properties</h3>
                 </div>
@@ -213,12 +211,17 @@ all your needs</h2>
             </div>
                 </div>
             </div>
-            <div class="footer bgwhite">
+ 
+</div>
+
+            <footer class="footer mt-auto py-3 bgwhite">
+              <div class="container">
                 <div class="footer-links">
                     <a href="#">Home</a>
                 </div>
             <div class="copyright">Copyright  &copy;  2020 by Nigeria Property Link</div>
-            </div>
+              </div>
+          </footer>
 
 
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
