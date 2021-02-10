@@ -1,6 +1,12 @@
 <?php
-require("../api/config/config.php");
 
+header("Access-Control-Allow-Methods: POST");
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Max-Age: 3600");
+header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
+
+require("../api/config/config.php");
+$data = json_decode( file_get_contents("php://input"));
 
 // (!empty($data->bedroom) &&
 // !empty($data->location) &&
@@ -8,21 +14,24 @@ require("../api/config/config.php");
 // !empty( $data->type) ||
 // !empty($data->minPrice)||
 // !empty($data->maxPrice)
-echo $_GET['category'];
-$a = 1;
-if(
-$a == 1
+//echo $_GET['category'];
+if( !empty($_POST['bedroom']) ||
+!empty($_POST['location']) ||
+!empty($_POST['category']) ||
+!empty( $_POST['type']) ||
+!empty($_POST['minPrice'])||
+!empty($_POST['maxPrice'])
 ){
-   
-    // $s_bed  =  $data->bedroom;
-    // $s_location = $data->location;
-    // $s_category = $data->category;
-    // if(isset($s_type)){$s_type = $data->type;}
+    echo "hi:" ;
+    echo $_POST['bedroom'];
+echo $_POST['location'];
+echo $_POST['category'];
+echo $_POST['type'];
+echo "end. ";
     if(isset($s_min_price)){$s_min_price = $data->minPrice;}
     if(isset($s_max_price)){$s_max_price = $data->maxPrice;}
     $select_stm = "SELECT * From listings where category = '".$_GET['category']."' order by id asc ";
-echo $select_stm;
-    //$select_stmt = "SELECT * from listings where number_beds ='".$_bed."' and location ='".$s_location."' order by price limit 10 asc"; 
+echo " dd: ".$select_stm;
  $result = $conn->query($select_stm);
   
         // $result = $stmt->query($stmt);
@@ -36,7 +45,12 @@ echo $select_stm;
 
   
 }else{
-    echo "Empty field";
+     $select_stm = "SELECT * FROM listings order by date_added ASC";
+     $result = $conn->query($select_stm);
+echo ";kj";
+     while($row = $fetch_assoc()){
+         echo $row['title'];
+     }
 }
 
 
