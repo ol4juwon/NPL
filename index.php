@@ -1,3 +1,16 @@
+<?php
+require "vendor/autoload.php";
+
+use Auth0\SDK\Auth0;
+
+$auth0 = new Auth0([
+  'domain' => 'broadview.us.auth0.com',
+  'client_id' => 'gXs2kz7zyMpuswHUNm4pGByr7ffCvsy9',
+  'client_secret' => '4tJzDDMRcuOW81JeKxezADhgg8swwSUsrE-vvW-Vuy7J2kTbvF7WOTGpKsPikt4t',
+  'redirect_uri' => 'http://localhost:8888/callback.php',
+  'scope' => 'openid profile email',
+]);
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -6,8 +19,16 @@
     <meta name="description" content="">
     <meta name="author" content="Ol4juwon">
     <title>Nigeria Property Link::</title>
+    <!-- /* jquery */ -->
+<script src="http://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
     <style type="text/css">
-    @font-face {
+
+
+
+  @font-face {
         font-family: 'Roboto';
         font-style: normal;
         font-weight: 400;
@@ -15,6 +36,8 @@
         unicode-range: U + 0460-052F, U + 1C80-1C88, U + 20B4, U + 2DE0-2DFF, U + A640-A69F, U + FE2E-FE2F;
     }</style>
 
+<!-- auth0 -->
+<script src="https://cdn.auth0.com/js/auth0/9.11/auth0.min.js"></script>
 
     <!-- Bootstrap core CSS -->
 <link href="css/bootstrap.css" rel="stylesheet">
@@ -39,6 +62,25 @@
 
     
     <link href="navbar-top.css" rel="stylesheet">
+
+    <script type="text/javascript">
+    $(document).ready(function(){
+  var webAuth = new auth0.WebAuth({
+    domain:       'broadview.us.auth0.com',
+    clientID:     'gXs2kz7zyMpuswHUNm4pGByr7ffCvsy9',
+    redirectUri: 'localhost:8888/callback.php'
+  });
+
+  $('#signup').click(function(e){
+    e.preventDefault();
+    webAuth.authorize();
+
+  });
+});
+</script>
+
+
+
   </head>
   <body>
     
@@ -66,9 +108,9 @@
           <a class="nav-link" href="contact.php">Contact Us</a>
         </li>
       </ul>
-      <form class="d-flex">
-         <button class="btn btn-secondary" type="submit">Register/Sign In</button>
-      </form>
+      <div class="d-flex">
+         <button id="signup" class="btn btn-secondary" type="submit">Register/Sign In</button>
+</div>
     </div>
   </div>
 </div>

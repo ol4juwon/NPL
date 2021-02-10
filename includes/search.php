@@ -22,15 +22,13 @@ if( !empty($_POST['bedroom']) ||
 !empty($_POST['minPrice'])||
 !empty($_POST['maxPrice'])
 ){
-    echo "hi:" ;
-    echo $_POST['bedroom'];
-echo $_POST['location'];
-echo $_POST['category'];
-echo $_POST['type'];
-echo "end. ";
+    $bed =  $_POST['bedroom'];
+$location = $_POST['location'];
+$category =  $_POST['category'];
+$type = $_POST['type'];
     if(isset($s_min_price)){$s_min_price = $data->minPrice;}
     if(isset($s_max_price)){$s_max_price = $data->maxPrice;}
-    $select_stm = "SELECT * From listings where category = '".$_GET['category']."' order by id asc ";
+    $select_stm = "SELECT * From listings where category = '".$_POST['category']."' order by id asc ";
 echo " dd: ".$select_stm;
  $result = $conn->query($select_stm);
   

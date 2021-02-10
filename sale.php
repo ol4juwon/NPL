@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <head>
+  <head>
         <meta charset="utf-8">
         <meta name="viewport" content=" width=device-width, initial-scale=1 ">
         <meta name="description" content="">
@@ -42,10 +42,10 @@
             
             <link href="navbar-top.css" rel="stylesheet">
           
-    </head>
-    <body>
-        <div class="navbar navbar-expand-md fixed-top navbar-light bg-white ">
-            <div class="container-fluid">
+  </head>
+  <body>
+    <div class="navbar navbar-expand-md fixed-top navbar-light bg-white ">
+      <div class="container-fluid">
               <a class="navbar-brand" href="#"><img src="" alt="Logo" ></a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -71,10 +71,10 @@
                 <form class="d-flex">
                    <button class="btn btn-secondary" type="submit">Register/Sign In</button>
                 </form>
-              </div>
-            </div>
-          </div>
-          <div class="seak-cr">
+              </div> <!-- collapse-->
+      </div><!-- container fluid-->
+        </div><!--  navbar ends  -->
+          <div class="seak-cr"> 
             <div class="sale-search">
               <div class="sale-container-s">
               <form class="form-inline"  method="get" action="includes/search.php">
@@ -132,20 +132,15 @@
                           </div>
                     </div>
                     
-        </form>
-              </div>
-              <div class="result-bar">
-                <p>Results</p>
-              <form class="d-flex" style="display: flex !important; right:0px"> 
-                   <select class="btn " name="sortby">
-                     <option>Sort By...</option>
-                     <option>Price</option>
-                </form>             </div>
-
+              </form>
             </div>
-          </div>
+              
+
+          </div><!-- Sale search div ends -->
+           
+        </div><!-- seak-cr ends -->
 
 
 
-    </body>
+  </body>
 </html>
