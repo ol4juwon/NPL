@@ -7,10 +7,20 @@ body{
 }
 .form-inline{
     margin: 0 !important;
+    width: 100%;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+    align-self: center;
+    justify-content:space-between;
 }
 .nav-shad{
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
+}
+.res_bar{
+  justify-content: space-around;
+  background-color: #ffffff;
 }
 .nav{
 position: absolute;
@@ -39,7 +49,7 @@ src: url(//fonts.gstatic.com/s/roboto/v18/KFOkCnqEu92Fr1Mu51xEIzIXKMnyrYk.woff2)
 }
 
 .seak-cr{
-  position: relative;
+  position: absolute;
     width: 100%;
     align-content: center;
 }
@@ -131,15 +141,16 @@ background: linear-gradient(0.87deg, rgba(105, 112, 128, 0.54) 0.69%, rgba(81, 3
   position: relative;
   width: 80%;
   margin: 0 auto;
-  top: 100px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
+  background-color: #000000;
 }
 .search-card{
 
   
-  position: relative;
+  position: absolute;
   text-align: center;
+  background-color:#697080;
   top: 10px;
   width: 100%;
   margin: 0 auto;
@@ -177,11 +188,12 @@ background-color: #697080;
 
 .search-container{
   position: relative;
+  margin: 0 auto;
     align-content: center;
     width: 100%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
-    margin: 0 auto;
+    
     height: fit-content;
     overflow: auto;
     justify-content: space-evenly;
@@ -266,7 +278,10 @@ background: #697080;
         background-color: #555;
       }
 
-
+.bx-sh{
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
 .sale-search{
   position: relative;
   background-color: white;
@@ -278,15 +293,32 @@ background: #697080;
   align-content: center;
   
 }
+
+.content-container{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: #ddd;
+  margin: 0 auto;
+  width: 100%;
+  height: fit-content;
+  justify-content:center;
+  box-shadow: 2px 4px 8px 0 rgba(0,0,0,0.2);
+
+
+}
+.content-container > div {
+  padding: 20px;
+  margin: 20px;
+
+}
+
 .sale-container-s{
   width: 80%;
-  position: relative;
-  top: 100px;
-  align-items: center;
-  align-content: center;
+  position: absolute;
   margin: 0 auto;
+  top: 10px;
   padding: 10px 10px 10px 10px;
-
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }  
 .result-bar{

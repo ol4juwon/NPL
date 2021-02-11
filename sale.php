@@ -44,7 +44,7 @@
           
   </head>
   <body>
-    <div class="navbar navbar-expand-md fixed-top navbar-light bg-white ">
+    <div class="navbar bx-sh navbar-expand-md navbar-light bg-white ">
       <div class="container-fluid">
               <a class="navbar-brand" href="#"><img src="" alt="Logo" ></a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -73,11 +73,10 @@
                 </form>
               </div> <!-- collapse-->
       </div><!-- container fluid-->
-        </div><!--  navbar ends  -->
-          <div class="seak-cr"> 
-            <div class="sale-search">
-              <div class="sale-container-s">
-              <form class="form-inline"  method="get" action="includes/search.php">
+    </div><!--  navbar ends  -->
+    <div class="content-container">
+      <div>    
+      <form class="form-inline"  method="get" action="includes/search.php">
           <div class="form-row">
               
               <div class="form-group form-edit col-sm-10"> 
@@ -132,14 +131,13 @@
                           </div>
                     </div>
                     
-              </form>
-            </div>
-              
-
-          </div><!-- Sale search div ends -->
-           
-        </div><!-- seak-cr ends -->
-
+              </form>  
+      </div>
+      <div class="res_bar" >
+        <p> Results</p>
+      </div>
+    </div>
+          
 
 
   </body>
