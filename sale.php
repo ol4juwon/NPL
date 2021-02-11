@@ -74,6 +74,10 @@
               </div> <!-- collapse-->
       </div><!-- container fluid-->
     </div><!--  navbar ends  -->
+    <div style="position: absolute; width:100%; height:400px; background-color:white; box-shadow: 2px 4px 8px 0 rgba(0,0,0,0.2);
+">
+
+    </div>
     <div class="content-container">
       <div>    
       <form class="form-inline"  method="get" action="includes/search.php">
@@ -135,6 +139,17 @@
       </div>
       <div class="res_bar" >
         <p> Results</p>
+      </div>
+
+      <div>
+        <div class="property-card">
+          <div style="width: 30%;">
+            <img src="img/bernard-hermant-M0k4llbRpHU-unsplash 1.png" alt="property card" height="200px" width="100%">
+          </div>
+          <div style=" width:70%;">
+            <h2>2 bedroom duplex</h2>
+          </div>
+        </div>
       </div>
     </div>
           

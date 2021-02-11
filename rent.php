@@ -74,7 +74,84 @@
               </div>
             </div>
           </div>
+          <div style="position: absolute; width:100%; height:400px; background-color:white; box-shadow: 2px 4px 8px 0 rgba(0,0,0,0.2);
+">
 
+    </div>
+    <div class="content-container">
+      <div>    
+      <form class="form-inline"  method="get" action="includes/search.php">
+          <div class="form-row">
+              
+              <div class="form-group form-edit col-sm-10"> 
+                            <label for="inputState">Location</label>
+                            <select id="inputState" name="location" class="form-control">
+                              <option selected>Choose...</option>
+                              <option>Lekki</option>
+                              <option>Victoria Island</option>
+                              <option>Ikoyi</option>
+                              <option>Lagos Island</option>
+                              <option>Agungi</option>
+                            </select>
+              </div>
+        </div>
+
+        <div class="form-row">
+                        <div class="form-group form-edit col-sm-2">
+                            <label for="inputState">Bedrooms</label>
+                            <select id="inputState" name="category" class="form-control">
+                              <option selected>Choose...</option>
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                            </select>
+                          </div>
+                          <div class="form-group form-edit col-sm-2">
+                            <label for="inputState">Type</label>
+                            <select id="inputState" name="type" class="form-control">
+                              <option selected>Choose...</option>
+                              <option>Flat</option>
+                              <option>Shared Apartment</option>
+                              <option>Office Space</option>
+                              <option>duplex</option>
+                            </select>
+                          </div>
+                          <div class="form-group form-edit col-sm-2">
+                            <label for="inputState">Min Price</label>
+                            <select id="inputState" name="minPrice" class="form-control">
+                              <option selected>Choose...</option>
+                              <option>150000</option>
+                            </select>
+                          </div>
+                          <div class="form-group form-edit col-sm-2">
+                            <label for="inputState">Max Price</label>
+                            <select id="inputState" name="maxPrice" class="form-control">
+                              <option selected>Choose...</option>
+                              <option>2000000</option>
+                            </select>
+                          </div>
+                          <div class="form-group form-edit col-sm-2 px-3 ">
+                            <button class="btn btn-secondary bgwhite button btn-block" name="search" type="submit">Search</button>
+                          </div>
+                    </div>
+                    
+              </form>  
+      </div>
+      <div class="res_bar" >
+        <p> Results</p>
+      </div>
+
+      <div>
+        <div class="property-card">
+          <div style="width: 30%;">
+            <img src="img/bernard-hermant-M0k4llbRpHU-unsplash 1.png" alt="property card" height="200px" width="100%">
+          </div>
+          <div style=" width:70%;">
+            <h2>2 bedroom duplex</h2>
+          </div>
+        </div>
+      </div>
+    </div>
 
 
     </body>

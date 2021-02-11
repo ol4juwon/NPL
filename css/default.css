@@ -21,6 +21,8 @@ body{
 .res_bar{
   justify-content: space-around;
   background-color: #ffffff;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
 }
 .nav{
 position: absolute;
@@ -31,6 +33,15 @@ top: 0px;
 
 background: #FFFFFF;}
 
+.property-card{
+background-color: aliceblue;
+display: flex;
+width: 100%;
+}
+.property-card > div{
+  flex-direction: row;
+  height: fit-content;
+}
 .list-header{
   position: relative;
     background-color: #697080;
@@ -282,34 +293,23 @@ background: #697080;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
 }
-.sale-search{
-  position: relative;
-  background-color: white;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
-  width: 100%;
-  height: 400px;
-  align-items: center;
-  align-content: center;
-  
-}
+
 
 .content-container{
   position: relative;
   display: flex;
   flex-direction: column;
-  background-color: #ddd;
+  background-color:#ffffff;
   margin: 0 auto;
-  width: 100%;
+  width: 80%;
   height: fit-content;
   justify-content:center;
-  box-shadow: 2px 4px 8px 0 rgba(0,0,0,0.2);
-
+  
 
 }
 .content-container > div {
-  padding: 20px;
-  margin: 20px;
+  padding: 10px;
+  margin: 20px 0px 20px 0;
 
 }
 
@@ -321,11 +321,3 @@ background: #697080;
   padding: 10px 10px 10px 10px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }  
-.result-bar{
-position: relative;
-top: 10px;
-margin: 0 auto;
-width: 80%;
-
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-}
