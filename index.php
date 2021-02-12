@@ -132,7 +132,7 @@ all your needs</h2>
           <div class="search-container bg-white" style=" width: 80%; margin: 0 auto;  background-color: whitesmoke;">
             <div class="search-home">
                 <div class="container">
-          <form class="form-inline"  method="post" action="includes/search.php">
+          <form class="form-inline"  method="POST" action="includes/search.php">
           <div class="form-row">
               <div class="form-group form-edit col-sm-2">
           <label for="inputState">Bedrooms</label>

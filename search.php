@@ -1,9 +1,4 @@
 <!DOCTYPE html>
-<?php
-include("api/config/config.php");
- include("includes/sale_search.php");
- echo "s";
-?>
 <html>
   <head>
         <meta charset="utf-8">
@@ -85,12 +80,13 @@ include("api/config/config.php");
     </div>
     <div class="content-container">
       <div>    
-      <form class="form-inline"  method="POST" action="sale.php">
+      <form class="form-inline"  method="POST" action="includes/search.php">
           <div class="form-row">
               
               <div class="form-group form-edit col-sm-10"> 
                             <label for="inputState">Location</label>
                             <select id="inputState" name="location" class="form-control">
+                              <option selected>Choose...</option>
                               <option>Lekki</option>
                               <option>Victoria Island</option>
                               <option>Ikoyi</option>
@@ -103,7 +99,8 @@ include("api/config/config.php");
         <div class="form-row">
                         <div class="form-group form-edit col-sm-2">
                             <label for="inputState">Bedrooms</label>
-                            <select id="inputState" name="bedroom" class="form-control">
+                            <select id="inputState" name="category" class="form-control">
+                              <option selected>Choose...</option>
                               <option>1</option>
                               <option>2</option>
                               <option>3</option>
@@ -112,6 +109,7 @@ include("api/config/config.php");
                           <div class="form-group form-edit col-sm-2">
                             <label for="inputState">Type</label>
                             <select id="inputState" name="type" class="form-control">
+                              <option selected>Choose...</option>
                               <option>Flat</option>
                               <option>Shared Apartment</option>
                               <option>Office Space</option>
@@ -121,12 +119,14 @@ include("api/config/config.php");
                           <div class="form-group form-edit col-sm-2">
                             <label for="inputState">Min Price</label>
                             <select id="inputState" name="minPrice" class="form-control">
+                              <option selected>Choose...</option>
                               <option>150000</option>
                             </select>
                           </div>
                           <div class="form-group form-edit col-sm-2">
                             <label for="inputState">Max Price</label>
                             <select id="inputState" name="maxPrice" class="form-control">
+                              <option selected>Choose...</option>
                               <option>2000000</option>
                             </select>
                           </div>
@@ -134,7 +134,6 @@ include("api/config/config.php");
                             <button class="btn btn-secondary bgwhite button btn-block" name="search" type="submit">Search</button>
                           </div>
                     </div>
-                   
                     
               </form>  
       </div>
@@ -143,17 +142,16 @@ include("api/config/config.php");
       </div>
 
       <div>
-        
-          <?php
-                    if(isset($_POST['search'])){
-                      
 
-                      search($conn,$_POST);
-                     
-                    }
-
-                    ?>
-         
+      
+        <div class="property-card">
+          <div style="width: 30%;">
+            <img src="img/bernard-hermant-M0k4llbRpHU-unsplash 1.png" alt="property card" height="200px" width="100%">
+          </div>
+          <div style=" width:70%;">
+            <h2>2 bedroom duplex</h2>
+          </div>
+        </div>
       </div>
     </div>
           
