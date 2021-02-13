@@ -79,7 +79,7 @@
         <h1>Create a request </h1>
       </div>
         <div  style="width: 90%; margin:0 auto;">
-        <form class="form-inline"  method="POST" action="sale.php">
+        <form class="form-inline"  method="get" action="#">
           <div class="form-row">
               
               <div class="form-group form-edit col-sm-12"> 
@@ -104,7 +104,7 @@
                             </select>
                           </div>
                           <div class="form-group form-edit col-sm-2">
-                            <label for="inputState">Type</label>
+                            <label for="inputState">Property type</label>
                             <select id="inputState" name="type" class="form-control">
                               <option>Flat</option>
                               <option>Shared Apartment</option>
@@ -112,7 +112,7 @@
                               <option>duplex</option>
                             </select>
                           </div>
-                          <div class="form-group form-edit col-sm-3">
+                          <div class="form-group form-edit col-sm-2">
                             <label for="inputState">Min Price</label>
                             <select id="inputState" name="minPrice" class="form-control">
                               <option>150000</option>
@@ -124,12 +124,39 @@
                               <option>2000000</option>
                             </select>
                           </div>
-                          
+                          <div class="form-group form-edit col-sm-2">
+                            <label for="inputState">Lease type</label>
+                            <select id="inputState" name="maxPrice" class="form-control">
+                              <option>Rent</option>
+                              <option>Sell</option>
+                              <option>Lease</option>
+                              <option>Others</option>
+                            </select>
+                          </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group form-edit col-sm-3">
+                <label for="name">Full names</label>
+                <input class="form-control" type="text" name="name" >
+              </div>
+              <div class="form-group form-edit col-sm-2">
+                <label for="name">Phone Number</label>
+                <input class="form-control" type="number" name="name" >
+              </div>
+              <div class="form-group form-edit col-sm-2">
+                <label for="name">email</label>
+                <input class="form-control" type="e-mail" name="name" >
+              </div>
             </div>
             <div class="form-row">
               <div class="form-group form-edit col-sm-12">
+              <label for="comments">Comments</label>
+                <textarea class="form-control" rows="10" name="comments" ></textarea>
                 
               </div>
+              <div class="d-flex form-group form-edit col-sm-2 px-3 ">
+                            <button class="btn btn-secondary bgwhite button btn-block" name="search" type="submit">Submit Request</button>
+                          </div>
             </div>
                    
                     
