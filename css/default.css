@@ -37,10 +37,13 @@ background: #FFFFFF;}
 background-color: aliceblue;
 display: flex;
 width: 100%;
+
+flex-direction: row;
 }
 .property-card > div{
-  flex-direction: row;
   height: fit-content;
+  margin: 10px;
+  padding: 10px;
 }
 .list-header{
   position: relative;

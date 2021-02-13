@@ -1,12 +1,16 @@
 <!DOCTYPE html>
+<?php
+include("api/config/config.php");
+ include("includes/sale_search.php");
+?>
 <html>
-    <head>
+  <head>
         <meta charset="utf-8">
         <meta name="viewport" content=" width=device-width, initial-scale=1 ">
         <meta name="description" content="">
         <meta name="author" content="Ol4juwon">
         <meta name="company" content="Nigeria Property Link">
-        <title> Nigeria Property Link::Rent</title>
+        <title> Nigeria Property Link::For Rent</title>
 
         <style type="text/css">
             @font-face {
@@ -42,10 +46,10 @@
             
             <link href="navbar-top.css" rel="stylesheet">
           
-    </head>
-    <body>
-        <div class="navbar navbar-expand-md fixed-top navbar-light bg-white ">
-            <div class="container-fluid">
+  </head>
+  <body>
+    <div class="navbar bx-sh navbar-expand-md navbar-light bg-white ">
+      <div class="container-fluid">
               <a class="navbar-brand" href="#"><img src="" alt="Logo" ></a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -53,13 +57,13 @@
               <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav me-auto mb-1 mb-md-1">
                   <li class="nav-item ">
-                    <a class="nav-link" aria-current="page" href="index.php">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="sale.php">For Sale</a>
+                    <a class="nav-link"  href="index.php">Home</a>
                   </li>
                   <li class="nav-item active">
-                    <a class="nav-link" aria-current="page" href="rent.php">For Rent</a>
+                    <a class="nav-link" aria-current="page" href="sale.php">For Sale</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="rent.php">For Rent</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="requests.php ">Requests</a>
@@ -71,22 +75,21 @@
                 <form class="d-flex">
                    <button class="btn btn-secondary" type="submit">Register/Sign In</button>
                 </form>
-              </div>
-            </div>
-          </div>
-          <div style="position: absolute; width:100%; height:400px; background-color:white; box-shadow: 2px 4px 8px 0 rgba(0,0,0,0.2);
+              </div> <!-- collapse-->
+      </div><!-- container fluid-->
+    </div><!--  navbar ends  -->
+    <div style="position: absolute; width:100%; height:400px; background-color:white; box-shadow: 2px 4px 8px 0 rgba(0,0,0,0.2);
 ">
 
     </div>
     <div class="content-container">
       <div>    
-      <form class="form-inline"  method="get" action="includes/search.php">
+      <form class="form-inline"  method="POST" action="sale.php">
           <div class="form-row">
               
               <div class="form-group form-edit col-sm-10"> 
                             <label for="inputState">Location</label>
                             <select id="inputState" name="location" class="form-control">
-                              <option selected>Choose...</option>
                               <option>Lekki</option>
                               <option>Victoria Island</option>
                               <option>Ikoyi</option>
@@ -99,8 +102,7 @@
         <div class="form-row">
                         <div class="form-group form-edit col-sm-2">
                             <label for="inputState">Bedrooms</label>
-                            <select id="inputState" name="category" class="form-control">
-                              <option selected>Choose...</option>
+                            <select id="inputState" name="bedroom" class="form-control">
                               <option>1</option>
                               <option>2</option>
                               <option>3</option>
@@ -109,7 +111,6 @@
                           <div class="form-group form-edit col-sm-2">
                             <label for="inputState">Type</label>
                             <select id="inputState" name="type" class="form-control">
-                              <option selected>Choose...</option>
                               <option>Flat</option>
                               <option>Shared Apartment</option>
                               <option>Office Space</option>
@@ -119,21 +120,20 @@
                           <div class="form-group form-edit col-sm-2">
                             <label for="inputState">Min Price</label>
                             <select id="inputState" name="minPrice" class="form-control">
-                              <option selected>Choose...</option>
                               <option>150000</option>
                             </select>
                           </div>
                           <div class="form-group form-edit col-sm-2">
                             <label for="inputState">Max Price</label>
                             <select id="inputState" name="maxPrice" class="form-control">
-                              <option selected>Choose...</option>
                               <option>2000000</option>
                             </select>
                           </div>
                           <div class="form-group form-edit col-sm-2 px-3 ">
                             <button class="btn btn-secondary bgwhite button btn-block" name="search" type="submit">Search</button>
                           </div>
-                    </div>
+            </div>
+                   
                     
               </form>  
       </div>
@@ -142,17 +142,21 @@
       </div>
 
       <div>
-        <div class="property-card">
-          <div style="width: 30%;">
-            <img src="img/bernard-hermant-M0k4llbRpHU-unsplash 1.png" alt="property card" height="200px" width="100%">
-          </div>
-          <div style=" width:70%;">
-            <h2>2 bedroom duplex</h2>
-          </div>
-        </div>
+        
+          <?php
+                    if(isset($_POST['search'])){
+                      
+
+                      search($conn,$_POST);
+                     
+                    }
+
+                    ?>
+         
       </div>
     </div>
+          
 
 
-    </body>
+  </body>
 </html>

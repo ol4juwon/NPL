@@ -1,7 +1,9 @@
 <?php
 
 $data =$_POST;
-function search($conn,$data){
+echo "jjdk";
+var_dump($data);
+function rent_search($conn,$data){
 if( !empty($data['bedroom']) ||
 !empty($data['location']) ||
 !empty($data['category']) ||
@@ -19,10 +21,10 @@ $s_min_price = htmlspecialchars(strip_tags($data['minPrice']));
     $select_stm = "SELECT * From listings";
     $select_stm .= " WHERE ";
     $select_stm .= " (number_beds >= '".$bed."'  "; 
+    $select_stm .= " AND type = '".$prop_type."' ";
     $select_stm .= " AND location  = '".$location."') ";
     $select_stm .= " OR price > '".$s_min_price. "'";
    // $select_stm .= " AND price < '".$s_max_price. "')";
-    $select_stm .= " AND type = '".$prop_type."' ";
     $select_stm .= " order by id asc ";
     echo $select_stm;
  $result = $conn->query($select_stm);

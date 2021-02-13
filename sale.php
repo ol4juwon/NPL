@@ -2,7 +2,6 @@
 <?php
 include("api/config/config.php");
  include("includes/sale_search.php");
- echo "s";
 ?>
 <html>
   <head>

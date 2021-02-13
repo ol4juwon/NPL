@@ -44,7 +44,7 @@
           
     </head>
     <body>
-        <div class="navbar navbar-expand-md fixed-top navbar-light bg-white ">
+      <div class="navbar navbar-expand-md fixed-top navbar-light bg-white ">
             <div class="container-fluid">
               <a class="navbar-brand" href="#"><img src="" alt="Logo" ></a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -73,7 +73,70 @@
                 </form>
               </div>
             </div>
-          </div>
+      </div>
+      <div style="Position: absolute; background-color:whitesmoke; width:100%; margin: 0 auto; top:45px; height : fit-content; padding:10px;">
+        <div style="position:relative ; margin:0 auto; width: 90%; text-align:left;">
+        <h1>Create a request </h1>
+      </div>
+        <div  style="width: 90%; margin:0 auto;">
+        <form class="form-inline"  method="POST" action="sale.php">
+          <div class="form-row">
+              
+              <div class="form-group form-edit col-sm-12"> 
+                            <label for="inputState">Location</label>
+                            <select id="inputState" name="location" class="form-control">
+                              <option>Lekki</option>
+                              <option>Victoria Island</option>
+                              <option>Ikoyi</option>
+                              <option>Lagos Island</option>
+                              <option>Agungi</option>
+                            </select>
+              </div>
+        </div>
+
+        <div class="form-row">
+                        <div class="form-group form-edit col-sm-3">
+                            <label for="inputState">Bedrooms</label>
+                            <select id="inputState" name="bedroom" class="form-control">
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                            </select>
+                          </div>
+                          <div class="form-group form-edit col-sm-2">
+                            <label for="inputState">Type</label>
+                            <select id="inputState" name="type" class="form-control">
+                              <option>Flat</option>
+                              <option>Shared Apartment</option>
+                              <option>Office Space</option>
+                              <option>duplex</option>
+                            </select>
+                          </div>
+                          <div class="form-group form-edit col-sm-3">
+                            <label for="inputState">Min Price</label>
+                            <select id="inputState" name="minPrice" class="form-control">
+                              <option>150000</option>
+                            </select>
+                          </div>
+                          <div class="form-group form-edit col-sm-2">
+                            <label for="inputState">Max Price</label>
+                            <select id="inputState" name="maxPrice" class="form-control">
+                              <option>2000000</option>
+                            </select>
+                          </div>
+                          
+            </div>
+            <div class="form-row">
+              <div class="form-group form-edit col-sm-12">
+                
+              </div>
+            </div>
+                   
+                    
+
+          </form>
+        </div>
+      </div>
 
 
 

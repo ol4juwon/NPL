@@ -79,7 +79,33 @@ $auth0 = new Auth0([
 });
 </script>
 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>  
+   <script>
+  $(document).ready(function(){
+   $("#selects").change(function(){
+   var url =  $(this).children(":selected").text(); //get the selected option value
+   console.log(url);
+   switch (url) 
+  {
+   case "rent":
+   $("#searchs").attr('action','rent.php');
+   //changing action attribute of form to school.php
+   break;
+   case "sell":
+   $("#searchs").attr('action','sale.php');
+   break;
+   default:
+       $("#searchs").attr('action', '#');
+   }
+   }); 
+ }); 
 
+ function onSubmitAction(){
+   var e = document.getElementById("rentType");
+
+   var formaction = e.options[e.selectedIndex].value;
+ }
+ </script>
 
   </head>
   <body>
@@ -132,7 +158,7 @@ all your needs</h2>
           <div class="search-container bg-white" style=" width: 80%; margin: 0 auto;  background-color: whitesmoke;">
             <div class="search-home">
                 <div class="container">
-          <form class="form-inline"  method="POST" action="includes/search.php">
+          <form class="form-inline" onsubmit="onSubmitAction()" id="searchs"  method="POST" action="">
           <div class="form-row">
               <div class="form-group form-edit col-sm-2">
           <label for="inputState">Bedrooms</label>
@@ -146,7 +172,7 @@ all your needs</h2>
               </div>
               <div class="form-group form-edit col-sm-8"> 
                             <label for="inputState">Location</label>
-                            <select id="inputState" name="location" class="form-control">
+                            <select id="selects"  name="location" class="form-control">
                              <option>Lekki</option>
                               <option>Victoria Island</option>
                               <option>Ikoyi</option>
@@ -155,13 +181,13 @@ all your needs</h2>
                             </select>
               </div>
         </div>
-
+        
         <div class="form-row">
                         <div class="form-group form-edit col-sm-2">
                             <label for="inputState">Category</label>
-                            <select id="inputState" name="category" class="form-control">
-                            <option>rent</option>
-                              <option>sell</option>
+                            <select id="rentType" name="category" class="form-control">
+                            <option value="rent.php">rent</option>
+                              <option value="sale.php">sell</option>
                               
                               <option>lease</option>
                             </select>
@@ -329,8 +355,6 @@ all your needs</h2>
 
            
 
-
-    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
 
       
   </body>
