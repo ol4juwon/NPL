@@ -84,7 +84,8 @@
               
               <div class="form-group form-edit col-sm-12"> 
                             <label for="inputState">Location</label>
-                            <select id="inputState" name="location" class="form-control">
+                            <select id="inputState" name="location" class="form-control" required>
+                            <option value="" disabled selected>Select an option</option>
                               <option>Lekki</option>
                               <option>Victoria Island</option>
                               <option>Ikoyi</option>
@@ -97,7 +98,8 @@
         <div class="form-row">
                         <div class="form-group form-edit col-sm-3">
                             <label for="inputState">Bedrooms</label>
-                            <select id="inputState" name="bedroom" class="form-control">
+                            <select id="inputState" name="bedroom" class="form-control" required>
+                            <option disabled selected>Select an option</option>
                               <option>1</option>
                               <option>2</option>
                               <option>3</option>
@@ -105,7 +107,8 @@
                           </div>
                           <div class="form-group form-edit col-sm-2">
                             <label for="inputState">Property type</label>
-                            <select id="inputState" name="type" class="form-control">
+                            <select id="inputState" name="type" class="form-control" required>
+                            <option disabled selected>Select an option</option>
                               <option>Flat</option>
                               <option>Shared Apartment</option>
                               <option>Office Space</option>
@@ -114,19 +117,22 @@
                           </div>
                           <div class="form-group form-edit col-sm-2">
                             <label for="inputState">Min Price</label>
-                            <select id="inputState" name="minPrice" class="form-control">
+                            <select id="inputState" name="minPrice" class="form-control" required>
+                            <option disabled selected>Select an option</option>
                               <option>150000</option>
                             </select>
                           </div>
                           <div class="form-group form-edit col-sm-2">
                             <label for="inputState">Max Price</label>
-                            <select id="inputState" name="maxPrice" class="form-control">
+                            <select id="inputState" name="maxPrice" class="form-control"required>
+                            <option disabled selected>Select an option</option>
                               <option>2000000</option>
                             </select>
                           </div>
                           <div class="form-group form-edit col-sm-2">
                             <label for="inputState">Lease type</label>
-                            <select id="inputState" name="maxPrice" class="form-control">
+                            <select id="inputState" name="maxPrice" class="form-control" required>
+                            <option disabled selected>Select an option</option>
                               <option>Rent</option>
                               <option>Sell</option>
                               <option>Lease</option>
@@ -137,21 +143,21 @@
             <div class="form-row">
               <div class="form-group form-edit col-sm-3">
                 <label for="name">Full names</label>
-                <input class="form-control" type="text" name="name" >
+                <input class="form-control" type="text" name="name" required>
               </div>
               <div class="form-group form-edit col-sm-2">
                 <label for="name">Phone Number</label>
-                <input class="form-control" type="number" name="name" >
+                <input type="tel" class="form-control" name="phone"  required>  
               </div>
               <div class="form-group form-edit col-sm-2">
                 <label for="name">email</label>
-                <input class="form-control" type="e-mail" name="name" >
+                <input class="form-control" type="email" name="name" required >
               </div>
             </div>
             <div class="form-row">
               <div class="form-group form-edit col-sm-12">
               <label for="comments">Comments</label>
-                <textarea class="form-control" rows="10" name="comments" ></textarea>
+                <textarea class="form-control" rows="10" name="comments" required ></textarea>
                 
               </div>
               <div class="d-flex form-group form-edit col-sm-2 px-3 ">

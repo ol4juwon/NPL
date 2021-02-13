@@ -89,7 +89,8 @@ include("api/config/config.php");
               
               <div class="form-group form-edit col-sm-10"> 
                             <label for="inputState">Location</label>
-                            <select id="inputState" name="location" class="form-control">
+                            <select id="inputState" name="location" required class="form-control">
+                            <option disabled selected>Select an option</option>
                               <option>Lekki</option>
                               <option>Victoria Island</option>
                               <option>Ikoyi</option>
@@ -102,7 +103,8 @@ include("api/config/config.php");
         <div class="form-row">
                         <div class="form-group form-edit col-sm-2">
                             <label for="inputState">Bedrooms</label>
-                            <select id="inputState" name="bedroom" class="form-control">
+                            <select id="inputState" name="bedroom" required class="form-control">
+                            <option disabled selected>Select an option</option>
                               <option>1</option>
                               <option>2</option>
                               <option>3</option>
@@ -110,7 +112,8 @@ include("api/config/config.php");
                           </div>
                           <div class="form-group form-edit col-sm-2">
                             <label for="inputState">Type</label>
-                            <select id="inputState" name="type" class="form-control">
+                            <select id="inputState" name="type" required class="form-control">
+                            <option disabled selected>Select an option</option>
                               <option>Flat</option>
                               <option>Shared Apartment</option>
                               <option>Office Space</option>
@@ -119,13 +122,15 @@ include("api/config/config.php");
                           </div>
                           <div class="form-group form-edit col-sm-2">
                             <label for="inputState">Min Price</label>
-                            <select id="inputState" name="minPrice" class="form-control">
+                            <select id="inputState" name="minPrice" required class="form-control">
+                            <option disabled selected>Select an option</option>
                               <option>150000</option>
                             </select>
                           </div>
                           <div class="form-group form-edit col-sm-2">
                             <label for="inputState">Max Price</label>
-                            <select id="inputState" name="maxPrice" class="form-control">
+                            <select id="inputState" name="maxPrice" required class="form-control">
+                            <option disabled selected>Select an option</option>
                               <option>2000000</option>
                             </select>
                           </div>

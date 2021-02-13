@@ -66,7 +66,8 @@ echo $select_stm;
         echo  "<h2>{$row['title']} </h2>";
         echo "<h4>{$row['location']}</h4>";
         echo "<p>{$row['Description']} </p>";
-        echo " <button style=\"margin: 5px;\" >{$row['number_beds']} Bedrooms</button> <button  >{$row['toilets']} Toilets</button> <button  >{$row['bathrooms']} bathroom</button>  ";
+        echo " <button class=\"form-control\" style=\"margin: 5px;\" >{$row['number_beds']} Bedrooms</button>
+         <button class=\"form-control\"  >{$row['toilets']} Toilets</button> <button  >{$row['bathrooms']} bathroom</button>  ";
         echo "<p style=\"text-align:right;\"><a href=\"property.php?id={$row['id']}\">More Details</a></p> ";
         echo "</div></div> &nbsp;";
      }
