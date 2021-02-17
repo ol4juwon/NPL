@@ -73,28 +73,28 @@ $result = $conn->query($select_stm);
     $pages = ceil($total / 10);
     $previous = $page_num - 1;
     $next = $page_num + 1;
-    echo "  <div class=\"res_bar\" ><div>Results: Page {$page_num} of {$pages} </div><div>";
+    echo "  <div class=\"res_bar\" style=\"\"><div style=\"text-align:left;\" width=\"70% \">Results: Page {$page_num} of {$pages} </div><div style=\"text-align:right;\" width=\"30%\">";
     if($page_num != 1){
         $previous = $page_num-1;
-    echo "<a href=\"sale.php?page={$previous}\">Previous</a>";  }
+    echo "<a class=\"btn-light\" href=\"sale.php?page={$previous}\">Previous</a>";  }
 
-    echo "<a href=\"sale.php?page={$page_num}\">{$page_num}</a>"; 
+    echo "<a class=\"btn-light\" href=\"sale.php?page={$page_num}\">{$page_num}</a>"; 
     if($next == $pages){
-    echo "<a href=\"sale.php?page={$next}\">Next</a>"; }
-    echo "</div></div><div>";
+    echo "<a class=\"btn-light\" href=\"sale.php?page={$next}\">Next</a>"; }
+    echo "</div></div>";
      foreach($rows as $row) :
-        echo   " <div class=\"property-card\" style=\"box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        echo   " <div><div class=\"property-card\" style=\"box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
         transition: 0.3s;\">";
         echo "<div style=\"width: 30%;\">";
      
         echo  "<img class=\"img-fluid\" src=\"img/bernard-hermant-M0k4llbRpHU-unsplash 1.png\" alt=\"property card\" height=\"200px\" width=\"100%\">";
         echo "</div>";
-        echo "<div style=\" width:70%;\">";
+        echo "<div style=\" padding:15px; width:70%;\">";
         echo  "<h2>{$row['title']} </h2>";
         echo "<h4>{$row['location']}</h4>";
         echo "<p>{$row['Description']} </p>";
         echo " <button class=\"btn btn-outline-secondary \" style=\"margin: 5px;\" >{$row['number_beds']} Bedrooms</button> <button class=\"btn btn-outline-secondary \" >{$row['toilets']} Toilets</button> <button class=\"btn btn-outline-secondary \" >{$row['bathrooms']} bathroom</button>  ";
-        echo "<p style=\"text-align:right;\"><a href=\"property.php?id={$row['id']}\">More Details</a></p> ";
+        echo "<p class=\"alert-link alert-light\" style=\"text-align:right;\"><a style=\"text-decoration:none;\" class=\"btn-light\" href=\"property.php?id={$row['id']}\">More Details–––––></a></p> ";
         echo "</div></div> &nbsp;";
      endforeach;
 }

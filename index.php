@@ -100,7 +100,7 @@ $auth0 = new Auth0([
 </div>
 <div class="seak-cr" style="background-color: white;" >
 
-      <div class="floater-img" style=" position: relative; background-color: purple; height: 635px;">
+      <div class="img-fluid floater-img" style=" position: relative; background-color: purple; height: 635px;">
          <p style="background-color: black;"></p>
       </div>
       <div class="spotlight">
