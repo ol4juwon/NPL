@@ -2,6 +2,8 @@
 <?php
 include("api/config/config.php");
  include("includes/sale_search.php");
+ include('includes/search.php');
+ include 'search/sale.php';
 ?>
 <html>
   <head>
@@ -84,7 +86,7 @@ include("api/config/config.php");
     </div>
     <div class="content-container">
       <div>    
-      <form class="form-inline"  method="POST" action="sale.php">
+      <form class="form-inline"  method="GET" action="sale.php?page=1">
           <div class="form-row">
               
               <div class="form-group form-edit col-sm-10"> 
@@ -142,23 +144,32 @@ include("api/config/config.php");
                     
               </form>  
       </div>
-      <div class="res_bar" >
-        <p> Results</p>
-      </div>
+      
 
-      <div>
+      
         
           <?php
-                    if(isset($_POST['search'])){
+                    if(isset($_GET['search'])){
                       
-
-                      search($conn,$_POST);
+                      echo $_GET['page'];
+                      Search_sales($_GET,1,$conn);
                      
+                    }else{
+                      if(isset($_GET['page'])){
+                        $page_no = $_GET['page'];
+                        Search_sales(null,$page_no,$conn);
+                     
+                      }else{
+                        echo $conn->error;
+                        Search_sales(null,'1',$conn);
+                        echo $conn->error;
+                      }
+
                     }
 
                     ?>
          
-      </div>
+      
     </div>
           
 

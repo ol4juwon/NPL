@@ -2,6 +2,7 @@
 <?php
 include("api/config/config.php");
  include("includes/sale_search.php");
+ include 'search/rent.php';
 ?>
 <html>
   <head>
@@ -142,23 +143,26 @@ include("api/config/config.php");
                     
               </form>  
       </div>
-      <div class="res_bar" >
-        <p> Results</p>
-      </div>
-
-      <div>
-        
-          <?php
-                    if(isset($_POST['search'])){
+     <?php
+                    if(isset($_GET['search'])){
                       
-
-                      search($conn,$_POST);
+                      echo $_GET['page'];
+                      searchRents($_GET,1,$conn);
                      
+                    }else{
+                      if(isset($_GET['page'])){
+                        $page_no = $_GET['page'];
+                        searchRents(null,$page_no,$conn);
+                     
+                      }else{
+                        echo $conn->error;
+                        searchRents(null,'1',$conn);
+                        echo $conn->error;
+                      }
+
                     }
 
                     ?>
-         
-      </div>
     </div>
           
 

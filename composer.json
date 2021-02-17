@@ -1,5 +1,6 @@
 {
     "require": {
-        "auth0/auth0-php": "~7.0"
+        "auth0/auth0-php": "~7.0",
+        "google/apiclient": "^2.0"
     }
 }

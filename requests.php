@@ -6,6 +6,7 @@
         <meta name="description" content="">
         <meta name="author" content="Ol4juwon">
         <meta name="company" content="Nigeria Property Link">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <title> Nigeria Property Link::Requests</title>
 
         <style type="text/css">
@@ -150,8 +151,9 @@
                 <input type="tel" class="form-control" name="phone"  required>  
               </div>
               <div class="form-group form-edit col-sm-2">
-                <label for="name">email</label>
-                <input class="form-control" type="email" name="name" required >
+                <label for="name">Email</label>
+                <!-- <i class="fa fa-envelope icon"></i> -->
+                <input class="form-control fa fa-envelope icon" type="email" name="name" required >
               </div>
             </div>
             <div class="form-row">
@@ -160,7 +162,7 @@
                 <textarea class="form-control" rows="10" name="comments" required ></textarea>
                 
               </div>
-              <div class="d-flex form-group form-edit col-sm-2 px-3 ">
+              <div class="d-flex form-group form-edit col-sm-2 px-3 " style="text-align: left; margin-left:10px; " >
                             <button class="btn btn-secondary bgwhite button btn-block" name="search" type="submit">Submit Request</button>
                           </div>
             </div>

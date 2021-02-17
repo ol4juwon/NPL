@@ -61,51 +61,9 @@ $auth0 = new Auth0([
     </style>
 
     
-    <link href="navbar-top.css" rel="stylesheet">
+   
 
-    <script type="text/javascript">
-    $(document).ready(function(){
-  var webAuth = new auth0.WebAuth({
-    domain:       'broadview.us.auth0.com',
-    clientID:     'gXs2kz7zyMpuswHUNm4pGByr7ffCvsy9',
-    redirectUri: 'localhost:8888/callback.php'
-  });
 
-  $('#signup').click(function(e){
-    e.preventDefault();
-    webAuth.authorize();
-
-  });
-});
-</script>
-
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>  
-   <script>
-  $(document).ready(function(){
-   $("#selects").change(function(){
-   var url =  $(this).children(":selected").text(); //get the selected option value
-   console.log(url);
-   switch (url) 
-  {
-   case "rent":
-   $("#searchs").attr('action','rent.php');
-   //changing action attribute of form to school.php
-   break;
-   case "sell":
-   $("#searchs").attr('action','sale.php');
-   break;
-   default:
-       $("#searchs").attr('action', '#');
-   }
-   }); 
- }); 
-
- function onSubmitAction(){
-   var e = document.getElementById("rentType");
-
-   var formaction = e.options[e.selectedIndex].value;
- }
- </script>
 
   </head>
   <body>
@@ -134,8 +92,8 @@ $auth0 = new Auth0([
           <a class="nav-link" href="contact.php">Contact Us</a>
         </li>
       </ul>
-      <div class="d-flex">
-         <button id="signup" class="btn btn-secondary" type="submit">Register/Sign In</button>
+      <div class="d-flex " >
+        <a href="register.php" class="btn btn-grey btn-secondary" > Register/Sign In</a>
 </div>
     </div>
   </div>
@@ -158,7 +116,7 @@ all your needs</h2>
           <div class="search-container bg-white" style=" width: 80%; margin: 0 auto;  background-color: whitesmoke;">
             <div class="search-home">
                 <div class="container">
-          <form class="form-inline" onsubmit="onSubmitAction()" id="searchs"  method="POST" action="">
+          <form class="form-inline" onsubmit="onSubmitAction()" id="searchs"  method="POST" action="search.php">
           <div class="form-row">
               <div class="form-group form-edit col-sm-2">
           <label for="inputState">Bedrooms</label>
@@ -186,8 +144,8 @@ all your needs</h2>
                         <div class="form-group form-edit col-sm-2">
                             <label for="inputState">Category</label>
                             <select id="rentType" name="category" class="form-control">
-                            <option value="rent.php">rent</option>
-                              <option value="sale.php">sell</option>
+                            <option value="rent">rent</option>
+                              <option value="sale">sell</option>
                               
                               <option>lease</option>
                             </select>

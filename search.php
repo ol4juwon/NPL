@@ -1,6 +1,7 @@
 <?php
-include("");
-
+require("api/config/config.php");
+require("includes/sale_search.php");
+require("includes/rent_search.php");
 ?>
 
 <!DOCTYPE html>
@@ -149,14 +150,22 @@ include("");
       <div>
 
       
-        <div class="property-card">
-          <div style="width: 30%;">
-            <img src="img/bernard-hermant-M0k4llbRpHU-unsplash 1.png" alt="property card" height="200px" width="100%">
-          </div>
-          <div style=" width:70%;">
-            <h2>2 bedroom duplex</h2>
-          </div>
-        </div>
+        <?php
+
+        if($_POST['category'] == "rent" ){
+         
+          rent_search($conn,$_POST);
+          
+
+        }elseif($_POST['category'] == "sell" ){
+       
+          search($conn,$_POST);
+
+        }else{
+          echo "lease" ;
+        }
+
+        ?>
       </div>
     </div>
           
