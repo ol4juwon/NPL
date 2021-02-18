@@ -165,7 +165,6 @@ include("api/config/config.php");
                         Search_sales(null,$page_no,$conn);
                      
                       }else{
-                        echo $conn->error;
                         Search_sales(null,'1',$conn);
                         echo $conn->error;
                       }
