@@ -18,6 +18,7 @@
          echo $conn->connect_errno;
          echo $conn->connect_error;
          exit();
+         
    
      }else{
        
