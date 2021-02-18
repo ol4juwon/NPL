@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
 include("api/config/config.php");
- include("includes/sale_search.php");
+ //include("includes/sale_search.php");
  include('search/sale.php');
  include("config.php");
 ?>
@@ -164,7 +164,6 @@ include("api/config/config.php");
                      
                       }else{
                         Search_sales(null,'1');
-                        echo $conn->error;
                       }
 
                     }

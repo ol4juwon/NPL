@@ -1,22 +1,5 @@
 <?php
-//     $db_host = "localhost";
-//     $db_name = "nigehtms_npl";
-//     $user = "nigehtms_ppl";
-//     $pword = "0L4kunle";
-   
-//     $charset = 'utf8mb4';
-//     $dsn = "mysql:host=$db_host;dbname=$db_name;charset=$charset";
-//     $options = [
-//         PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-//         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-//         PDO::ATTR_EMULATE_PREPARES   => false,
-//     ];
 
-//     try {
-//         $pdo = new PDO($dsn, $user, $pword, $options);
-//    } catch (\PDOException $e) {
-//         throw new \PDOException($e->getMessage(), (int)$e->getCode());
-//    }
 
 function Search_sales($data = array(),$page_num){
 Global $pdo;
@@ -80,19 +63,18 @@ $result = $pdo->query($select_stm);
     
 }else{
     $select_stm = "SELECT * FROM listings where category = 'sell' order by date_added ASC ";
-     
+     $limit = 10;
     if($result = $pdo->query($select_stm)){
 
     }else{
         echo $pdo->error;
     }
-     $rows = $result->fetch(MYSQLI_ASSOC);
-     // $result = $stmt->query($stmt);
-    $sql_paginate  = "SELECT count(id) as id FROM listings";
-    $result1 = $pdo->query($sql_paginate);
-    $propertyCount = $result1->fetch(MYSQLI_ASSOC);
-    $total = $propertyCount[0]['id'];
-    $pages = ceil($total / 10);
+       // $result = $stmt->query($stmt);
+    $sql_paginate  = "SELECT count(id) as id FROM listings where category = 'sell' order by date_added ASC ";
+   // $sql_paginate  = "SELECT count(id) as id FROM listings";
+    $row1 = $pdo->query($sql_paginate);
+    $total = $row1->rowCount();
+    $pages = ceil($total / $limit);
     $previous = $page_num - 1;
     $next = $page_num + 1;
     echo "  <div class=\"res_bar\" style=\"\"><div style=\"text-align:left;\" width=\"70% \">Results: Page {$page_num} of {$pages} </div><div style=\"justify-content:right;\" width=\"30%\">";
@@ -104,7 +86,7 @@ $result = $pdo->query($select_stm);
     if($next == $pages){
     echo "<a class=\"btn-light\" href=\"sale.php?page={$next}\">Next</a>"; }
     echo "</div></div>";
-     foreach($rows as $row) :
+     foreach($result as $row) :
         echo   " <div><div class=\"property-card\" style=\"box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
         transition: 0.3s;\">";
         echo "<div style=\"width: 30%;\">";

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
 include("api/config/config.php");
- include("includes/sale_search.php");
+ //include("includes/sale_search.php");
  include 'search/rent.php';
  include 'config.php';
 ?>
@@ -153,17 +153,16 @@ include("api/config/config.php");
                     if(isset($_GET['search'])){
                       
                       echo $_GET['page'];
-                      searchRents($_GET,1,$conn);
+                      searchRents($_GET,1);
                      
                     }else{
                       if(isset($_GET['page'])){
                         $page_no = $_GET['page'];
-                        searchRents(null,$page_no,$conn);
+                        searchRents(null,$page_no);
                      
                       }else{
-                        echo $conn->error;
-                        searchRents(null,'1',$conn);
-                        echo $conn->error;
+                        searchRents(null,'1');
+                        
                       }
 
                     }
