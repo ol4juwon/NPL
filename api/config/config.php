@@ -1,7 +1,7 @@
 <?php 
     $db_host = "localhost";
-    $db_name = "nightems_NPL";
-    $user = "nightems_ppl";
+    $db_name = "nigehtms_NPL";
+    $user = "nigehtms_ppl";
     $pword = "0L4kunle";
     $conn;
    
