@@ -51,7 +51,7 @@ if(isset($_GET['code'])){
 
 
 }
-
+var_dump($_SESSION);
 
 if(!isset($_SESSION['access_token'])){
     try{
@@ -74,6 +74,7 @@ $login_button = '<a href="'.$auth.'" >Login with google.</a>';
  
 if($login_button == ''){
     echo '<img src="'.$_SESSION['user_image'].'" >';
+    echo $_SESSION['user_first_name'];
 
 }else{
    echo  $login_button."llm";
@@ -81,6 +82,7 @@ if($login_button == ''){
 
 ?>
 <h1>Hi</h1>
-
+<?Php echo $_SESSION['user_first_name'];
+?>
 </body>
 </html>

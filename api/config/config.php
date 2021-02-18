@@ -1,8 +1,8 @@
 <?php 
     $db_host = "localhost";
-    $db_name = "NPL";
-    $user = "root";
-    $pword = "root";
+    $db_name = "nightems_NPL";
+    $user = "nightems_ppl";
+    $pword = "0L4kunle";
     $conn;
    
  

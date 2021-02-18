@@ -1,0 +1,50 @@
+.homepage-container{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.homepage-container>div{
+    position: static;
+    background-color: #fff;
+    width: 100%;
+    height:auto; 
+    align-content: center;
+}
+.spotlight{
+    position: relative;
+width: 100%;
+height: 635px;
+
+background: linear-gradient(0.87deg, rgba(105, 112, 128, 0.54) 0.69%, rgba(81, 38, 174, 0.28416) 100.48%, rgba(38, 92, 174, 0.00617433) 100.49%, rgba(195, 195, 196, 0.003125) 100.5%, rgba(169, 179, 203, 0.6) 100.51%);
+}
+
+.welcome{
+    
+        width: 100%;
+        /* background: url(../img/homepage.png); */
+        background-repeat: no-repeat;
+        background-size: 100%;
+}
+
+.did-center{
+    position: absolute;
+    height: 800px;
+    max-height: fit-content;
+align-content: center;
+    border: 10px blanchedalmond ;
+    border-style: double;
+    top: 0px;
+    width: 80%;
+    margin: 0 auto;
+ display: flex;
+flex-direction: column;
+}
+.did-center >div {
+
+    border: 10px blanchedalmond ;
+    border-style: double;
+    height: 33%;
+    margin: 0 auto;
+
+}

@@ -22,13 +22,14 @@ body{
   justify-content:left;
   background-color:#ffffff;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  width: 100%;
+  width: 20%;
+  margin:0 auto;
   transition: 0.3s;
  display: flex;
  flex-direction: row;
 }
 .res-bar > div{
-
+float: right;
 }
 a{
   color: #697080;

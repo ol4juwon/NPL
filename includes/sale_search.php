@@ -38,7 +38,7 @@ $s_min_price = htmlspecialchars(strip_tags($data['minPrice']));
         $next = $page_no + 1;
 
         $rows = $result->fetch_all(MYSQLI_ASSOC);
-        echo "  <div class=\"res_bar\" ><div>Results: Page {$page_no} of {$pages} </div><div>";
+        echo "  <div class=\"res_bar\" ><div width=\"70%\">Results: Page {$page_no} of {$pages} </div><div width=\"30%\" style=\"justify-content:right\" >";
             if($page_no != 1){
                 $previous = $page_no-1;
             echo "<a href=\"sale.php?page={$previous}\">Previous</a>";  }

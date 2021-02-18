@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
+
+    <?php
+    include 'includes/request.php';
+    include 'api/config/config.php';
+    include 'config.php';
+
+    ?>
         <meta charset="utf-8">
         <meta name="viewport" content=" width=device-width, initial-scale=1 ">
         <meta name="description" content="">
@@ -70,7 +77,13 @@
                   </li>
                 </ul>
                 <form class="d-flex">
-                   <button class="btn btn-secondary" type="submit">Register/Sign In</button>
+                  <?php 
+                    if(!isset($_SESSION['access_token'])){ 
+                      echo '<a href="register.php" class="btn btn-grey btn-secondary" > Register/Sign In</a>';
+                    }else{
+                      echo '<img src="'.$_SESSION['user_image'].'"> <a href="logout.php" class="btn-secondary">Logout </a> ';
+                    }
+                  ?>  
                 </form>
               </div>
             </div>
@@ -80,7 +93,7 @@
         <h1>Create a request </h1>
       </div>
         <div  style="width: 90%; margin:0 auto;">
-        <form class="form-inline"  method="get" action="#">
+        <form class="form-inline"  method="POST" action="">
           <div class="form-row">
               
               <div class="form-group form-edit col-sm-12"> 
@@ -125,14 +138,14 @@
                           </div>
                           <div class="form-group form-edit col-sm-2">
                             <label for="inputState">Max Price</label>
-                            <select id="inputState" name="maxPrice" class="form-control"required>
+                            <select id="inputState" name="maxPrice" class="form-control" required>
                             <option disabled selected>Select an option</option>
                               <option>2000000</option>
                             </select>
                           </div>
                           <div class="form-group form-edit col-sm-2">
                             <label for="inputState">Lease type</label>
-                            <select id="inputState" name="maxPrice" class="form-control" required>
+                            <select id="inputState" name="category" class="form-control" required>
                             <option disabled selected>Select an option</option>
                               <option>Rent</option>
                               <option>Sell</option>
@@ -153,7 +166,7 @@
               <div class="form-group form-edit col-sm-2">
                 <label for="name">Email</label>
                 <!-- <i class="fa fa-envelope icon"></i> -->
-                <input class="form-control fa fa-envelope icon" type="email" name="name" required >
+                <input class="form-control fa fa-envelope icon" type="email" name="email" required >
               </div>
             </div>
             <div class="form-row">
@@ -163,7 +176,7 @@
                 
               </div>
               <div class="d-flex form-group form-edit col-sm-2 px-3 " style="text-align: left; margin-left:10px; " >
-                            <button class="btn btn-secondary bgwhite button btn-block" name="search" type="submit">Submit Request</button>
+                            <button class="btn btn-secondary bgwhite button btn-block" name="submit" type="submit">Submit Request</button>
                           </div>
             </div>
                    
@@ -176,4 +189,15 @@
 
 
     </body>
-</html>
+</html><?php
+if(isset($_POST['submit'])){
+
+
+$tg =  create_request($_POST,$conn);
+echo $tg;
+echo "<script>alert('$tg');</script>"; 
+
+    }
+
+   
+    ?>

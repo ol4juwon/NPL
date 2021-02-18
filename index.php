@@ -1,15 +1,17 @@
 <?php
 require "vendor/autoload.php";
+include 'config.php';
+// use Auth0\SDK\Auth0;
 
-use Auth0\SDK\Auth0;
+// $auth0 = new Auth0([
+//   'domain' => 'broadview.us.auth0.com',
+//   'client_id' => 'gXs2kz7zyMpuswHUNm4pGByr7ffCvsy9',
+//   'client_secret' => '4tJzDDMRcuOW81JeKxezADhgg8swwSUsrE-vvW-Vuy7J2kTbvF7WOTGpKsPikt4t',
+//   'redirect_uri' => 'http://localhost:8888/callback.php',
+//   'scope' => 'openid profile email',
+// ]);
 
-$auth0 = new Auth0([
-  'domain' => 'broadview.us.auth0.com',
-  'client_id' => 'gXs2kz7zyMpuswHUNm4pGByr7ffCvsy9',
-  'client_secret' => '4tJzDDMRcuOW81JeKxezADhgg8swwSUsrE-vvW-Vuy7J2kTbvF7WOTGpKsPikt4t',
-  'redirect_uri' => 'http://localhost:8888/callback.php',
-  'scope' => 'openid profile email',
-]);
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -92,8 +94,15 @@ $auth0 = new Auth0([
           <a class="nav-link" href="contact.php">Contact Us</a>
         </li>
       </ul>
+      
       <div class="d-flex " >
-        <a href="register.php" class="btn btn-grey btn-secondary" > Register/Sign In</a>
+        <?php
+        if(!isset($_SESSION['user_first_name'])){ 
+        echo '<a href="register.php" class="btn btn-grey btn-secondary" > Register/Sign In</a>';
+        }else{
+          echo '<img height="50px" style="border-radius:50%;" src="'.$_SESSION['user_image'].'"> <a href="logout.php" class="btn-grey">Logout </a> ';
+        }
+        ?>
 </div>
     </div>
   </div>

@@ -4,6 +4,7 @@ include("api/config/config.php");
  include("includes/sale_search.php");
  include('includes/search.php');
  include 'search/sale.php';
+ include 'config.php';
 ?>
 <html>
   <head>
@@ -75,8 +76,12 @@ include("api/config/config.php");
                   </li>
                 </ul>
                 <form class="d-flex">
-                   <button class="btn btn-secondary" type="submit">Register/Sign In</button>
-                </form>
+                <?php if(!isset($_SESSION['access_token'])){ 
+        echo '<a href="register.php" class="btn btn-grey btn-secondary" > Register/Sign In</a>';
+        }else{
+          echo '<img src="'.$_SESSION['user_image'].'"> <a href="logout.php" class="btn-secondary">Logout </a> ';
+        }
+        ?></form>
               </div> <!-- collapse-->
       </div><!-- container fluid-->
     </div><!--  navbar ends  -->
