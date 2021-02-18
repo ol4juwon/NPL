@@ -2,7 +2,6 @@
 <?php
 include("api/config/config.php");
  include("includes/sale_search.php");
- include('includes/search.php');
  include('search/sale.php');
  include("config.php");
 ?>
@@ -155,17 +154,16 @@ include("api/config/config.php");
         
           <?php
                     if(isset($_GET['search'])){
-                      
-                      echo $_GET['page'];
-                      Search_sales($_GET,1,$conn);
+                    //  var_dump($_GET);
+                      Search_sales($_GET,1);
                      
                     }else{
                       if(isset($_GET['page'])){
                         $page_no = $_GET['page'];
-                        Search_sales(null,$page_no,$conn);
+                        Search_sales(null,$page_no);
                      
                       }else{
-                        Search_sales(null,'1',$conn);
+                        Search_sales(null,'1');
                         echo $conn->error;
                       }
 

@@ -1,6 +1,25 @@
 <?php
+//     $db_host = "localhost";
+//     $db_name = "nigehtms_npl";
+//     $user = "nigehtms_ppl";
+//     $pword = "0L4kunle";
+   
+//     $charset = 'utf8mb4';
+//     $dsn = "mysql:host=$db_host;dbname=$db_name;charset=$charset";
+//     $options = [
+//         PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+//         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+//         PDO::ATTR_EMULATE_PREPARES   => false,
+//     ];
 
-function Search_sales($data = array(),$page_num,$conn){
+//     try {
+//         $pdo = new PDO($dsn, $user, $pword, $options);
+//    } catch (\PDOException $e) {
+//         throw new \PDOException($e->getMessage(), (int)$e->getCode());
+//    }
+
+function Search_sales($data = array(),$page_num){
+Global $pdo;
 //var_dump($data);
 if($data != null){
 $limit = 10;
@@ -19,18 +38,19 @@ $select_stm .= " OR (price > '".$s_min_price. "' AND price < '".$s_max_price. "'
 $select_stm .= " AND type = '".$prop_type."' ";
 $select_stm .= " LIMIT {$start_page},{$limit} ";
 //$select_stm .= " order by id asc ";
-$result = $conn->query($select_stm);
+$result = $pdo->query($select_stm);
 
     // $result = $stmt->query($stmt);
     $sql_paginate  = "SELECT count(id) as id FROM listings";
-    $result1 = $conn->query($sql_paginate);
-    $propertyCount = $result1->fetch_all(MYSQLI_ASSOC);
-    $total = $propertyCount[0]['id'];
+    $row1 = $pdo->query($sql_paginate);
+    var_dump($row1);
+  //  var_dump($propertyCount);
+    $total = $row1->rowCount();
     $pages = ceil($total / $limit);
     $previous = $page_num - 1;
     $next = $page_num + 1;
 
-    $rows = $result->fetch_all(MYSQLI_ASSOC);
+    
     echo "  <div class=\"res_bar\" ><div>Results: Page {$page_num} of {$pages} </div><div>";
         if($page_num != 1){
             $previous = $page_num-1;
@@ -40,7 +60,8 @@ $result = $conn->query($select_stm);
         if($next == $pages){
         echo "<a href=\"sale.php?page={$next}\">Next</a>"; }
         echo "</div></div><div>";
-        foreach($rows as $row):
+       // $rows = $result->fetch(MYSQLI_ASSOC);
+        foreach($result as $row):
             echo   " <div><div class=\"property-card\" style=\"box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
             transition: 0.3s;\">";
             echo "<div style=\"width: 30%;\">";
@@ -60,16 +81,16 @@ $result = $conn->query($select_stm);
 }else{
     $select_stm = "SELECT * FROM listings where category = 'sell' order by date_added ASC ";
      
-    if($result = $conn->query($select_stm)){
+    if($result = $pdo->query($select_stm)){
 
     }else{
-        echo $conn->error;
+        echo $pdo->error;
     }
-     $rows = $result->fetch_all(MYSQLI_ASSOC);
+     $rows = $result->fetch(MYSQLI_ASSOC);
      // $result = $stmt->query($stmt);
     $sql_paginate  = "SELECT count(id) as id FROM listings";
-    $result1 = $conn->query($sql_paginate);
-    $propertyCount = $result1->fetch_all(MYSQLI_ASSOC);
+    $result1 = $pdo->query($sql_paginate);
+    $propertyCount = $result1->fetch(MYSQLI_ASSOC);
     $total = $propertyCount[0]['id'];
     $pages = ceil($total / 10);
     $previous = $page_num - 1;
