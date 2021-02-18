@@ -3,15 +3,15 @@
 require_once("vendor/autoload.php");
 
 define('DB_HOST', 'localhost');
-define('DB_USERNAME', 'root');
-define('DB_PASSWORD', 'root');
-define('DB_NAME', 'NPL');
+define('DB_USERNAME', 'nigehtms_ppl');
+define('DB_PASSWORD', '0L4kunle');
+define('DB_NAME', 'nigehtms_npl');
 define('DB_USER_TBL', 'users');
 
 // Google API configuration
 define('GOOGLE_CLIENT_ID', '403949553367-u5mto5tmnqttm68j4n37a4hkr1ssukh7.apps.googleusercontent.com');
 define('GOOGLE_CLIENT_SECRET', '6L5M-TPh3-kRK-KgV_O8TKCr');
-define('GOOGLE_REDIRECT_URL', 'http://localhost:8080/register.php');
+define('GOOGLE_REDIRECT_URL', 'http://nigeriapropertylink.com/register.php');
 
 // Start session
 if(!session_id()){
