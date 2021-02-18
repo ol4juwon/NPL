@@ -1,6 +1,6 @@
 <?php 
     $db_host = "localhost";
-    $db_name = "nigehtms_NPL";
+    $db_name = "nigehtms_npl";
     $user = "nigehtms_ppl";
     $pword = "0L4kunle";
     $conn;
@@ -18,7 +18,7 @@
          echo $conn->connect_errno;
          echo $conn->connect_error;
          exit();
-         
+
    
      }else{
        
