@@ -3,8 +3,8 @@
 include("api/config/config.php");
  include("includes/sale_search.php");
  include('includes/search.php');
- include 'search/sale.php';
- include 'config.php';
+ include('search/sale.php');
+ include("config.php");
 ?>
 <html>
   <head>
