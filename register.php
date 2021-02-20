@@ -44,8 +44,7 @@ if(isset($_GET['code'])){
 
         }
 
-        $user = new Users($pdo);
-        $user->create_user($_SESSION);
+        
 
 
 

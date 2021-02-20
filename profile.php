@@ -3,9 +3,12 @@
 <html>
     <head>
 <?php 
-require 'config.php';
-
 ini_set("display_errors",true);
+
+require 'config.php';
+require 'includes/createUser.php';
+
+
 if(isset($_GET['code'])){
     $token = $gClient->fetchAccessTokenWithAuthCode($_GET['code']);
     
@@ -43,7 +46,8 @@ if(isset($_GET['code'])){
 
         }
 
-
+        $user = new Users($pdo);
+        $user->create_user($_SESSION);
 
 
     }else{
