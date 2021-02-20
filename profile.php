@@ -11,7 +11,7 @@ require 'includes/createUser.php';
 
 if(isset($_GET['code'])){
     $token = $gClient->fetchAccessTokenWithAuthCode($_GET['code']);
-    
+    global $pdo;
     if(!isset($token['error'])){
         
 
