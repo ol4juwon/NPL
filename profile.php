@@ -3,6 +3,7 @@
 <html>
     <head>
 <?php 
+require 'config.php';
 
 ini_set("display_errors",true);
 if(isset($_GET['code'])){
