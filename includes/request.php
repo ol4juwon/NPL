@@ -1,7 +1,6 @@
 <?php 
-include '../api/config/config.php';
 
-function create_request($data = array(),$conn){
+function create_request($data = array()){
 var_dump($data);
     $name = htmlspecialchars(strip_tags($data['name']));
     $phone = htmlspecialchars(strip_tags($data['phone']));

@@ -20,9 +20,9 @@ if(isset($_GET['code'])){
 
         $data = $google_Service->userinfo->get();
         
-        echo "kil";
+        
         }catch(Exception $e){
-            echo $e;
+            
         }
         
         if(!empty($data['given_name'])){
@@ -48,7 +48,7 @@ if(isset($_GET['code'])){
 
     }
 
-
+header("Location: profile.php");
 
 }
 var_dump($_SESSION);
@@ -73,16 +73,19 @@ $login_button = '<a href="'.$auth.'" >Login with google.</a>';
 <?php 
  
 if($login_button == ''){
+    if(isset($_SESSION)){
+var_dump($_SESSION);
+    
     echo '<img src="'.$_SESSION['user_image'].'" >';
     echo $_SESSION['user_first_name'];
-
+}
 }else{
    echo  $login_button."llm";
 }
 
 ?>
 <h1>Hi</h1>
-<?Php echo $_SESSION['user_first_name'];
+<?Php // echo $_SESSION['user_first_name'];
 ?>
 </body>
 </html>
