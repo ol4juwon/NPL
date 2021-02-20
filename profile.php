@@ -1,14 +1,9 @@
 <?php 
 
-$userInfo = $auth0->getUser();
-
-if (!$userInfo) {
-    // We have no user info
-    // See below for how to add a login link
-} else {
-    // User is authenticated
-    // See below for how to display user information
+if(isset($_SESSION['access_token'])){
+echo $_SESSION['user_first_name'];
+}else{
+    header("Location: register.php");
 }
-
 
 ?>

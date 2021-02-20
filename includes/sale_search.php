@@ -57,7 +57,7 @@ $s_min_price = htmlspecialchars(strip_tags($data['minPrice']));
           echo  "<h2>{$row['title']} </h2>";
           echo "<h4>{$row['location']}</h4>";
           echo "<p>Description{$row['Description']} </p>";
-          echo " <button style=\"margin: 5px;\" >{$row['number_beds']} Bedrooms</button> <button  >{$row['toilets']} Toilets</button> <button  >{$row['bathrooms']} bathroom</button>  ";
+          echo " <button style=\"margin: 5px;\" >{$row['number_beds']} Bedrooms</button> <button  > Toilets</button> <button  > bathroom</button>  ";
           echo "<p style=\"text-align:right;\"><a href=\"property.php?id={$row['id']}\">More Details</a></p> ";
           echo "</div></div> &nbsp;";
             endforeach;

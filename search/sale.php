@@ -97,7 +97,7 @@ $result = $pdo->query($select_stm);
         echo  "<h2>{$row['title']} </h2>";
         echo "<h4>{$row['location']}</h4>";
         echo "<p>{$row['Description']} </p>";
-        echo " <button class=\"btn btn-outline-secondary \" style=\"margin: 5px;\" >{$row['number_beds']} Bedrooms</button> <button class=\"btn btn-outline-secondary \" >{$row['toilets']} Toilets</button> <button class=\"btn btn-outline-secondary \" >{$row['bathrooms']} bathroom</button>  ";
+        echo " <button class=\"btn btn-outline-secondary \" style=\"margin: 5px;\" >{$row['number_beds']} Bedrooms</button> <button class=\"btn btn-outline-secondary \" > Toilets</button> <button class=\"btn btn-outline-secondary \" >bathroom</button>  ";
         echo "<p class=\"alert-link alert-light\" style=\"text-align:right;\"><a style=\"text-decoration:none;\" class=\"btn-light\" href=\"property.php?id={$row['id']}\">More Details–––––></a></p> ";
         echo "</div></div> &nbsp;";
      endforeach;

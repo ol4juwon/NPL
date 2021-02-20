@@ -1,6 +1,7 @@
 <?php 
-
+ini_set("display_errors", true);
 function create_request($data = array()){
+    Global $pdo;
 var_dump($data);
     $name = htmlspecialchars(strip_tags($data['name']));
     $phone = htmlspecialchars(strip_tags($data['phone']));
@@ -22,12 +23,12 @@ $budget = $max;
     $insert_stmt .= " '{$bedroom}', '{$location}',";
     $insert_stmt .= " '{$budget}') ";
 
-    if($conn->query($insert_stmt)){
+    if($pdo->query($insert_stmt)){
        $msg = "Your Request was successfully made";
        
 
     }else{
-        $msg  = "Error haapened on ".$conn->error;
+        $msg  = "Error haapened on ".$pdo->error;
     }
 
     return $msg;

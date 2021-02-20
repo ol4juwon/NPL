@@ -3,6 +3,7 @@
     <head>
 
     <?php
+    ini_set("display_errors", true);
     include 'includes/request.php';
     include 'api/config/config.php';
     include 'config.php';
