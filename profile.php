@@ -4,6 +4,7 @@
     <head>
 <?php 
 
+ini_set("display_errors",true);
 if(isset($_GET['code'])){
     $token = $gClient->fetchAccessTokenWithAuthCode($_GET['code']);
     
