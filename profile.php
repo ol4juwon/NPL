@@ -47,4 +47,6 @@ header("Location: register.php");
 
 
 }
+echo $_SESSION['user_first_name'];
+echo $_GET['code'];
 ?>
