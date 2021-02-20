@@ -1,3 +1,7 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
 <?php 
 
 if(isset($_GET['code'])){
@@ -50,3 +54,9 @@ header("Location: register.php");
 echo $_SESSION['user_first_name'];
 echo $_GET['code'];
 ?>
+    </head>
+    <body>
+   <?php  echo $_SESSION['user_first_name'];
+echo $_GET['code']; ?>
+    </body>
+</html>
