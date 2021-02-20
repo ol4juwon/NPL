@@ -25,6 +25,7 @@ $gClient->setClientSecret(GOOGLE_CLIENT_SECRET);
 $gClient->setRedirectUri(GOOGLE_REDIRECT_URL);
 $gClient->addScope('email');
 $gClient->addScope('profile');
+$gClient->addScope('openid');
 
 //$google_service = new Google_Service_Oauth2($gClient);
 ?>
