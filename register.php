@@ -3,6 +3,7 @@
 <?php
 include('config.php');
 include('api/config/config.php');
+include 'includes/createUser.php';
 
 $login_button ="";
 
@@ -42,6 +43,9 @@ if(isset($_GET['code'])){
             $_SESSION['user_image'] = $data['picture'];
 
         }
+
+        $user = new Users($pdo);
+        $user->create_user($_SESSION);
 
 
 
