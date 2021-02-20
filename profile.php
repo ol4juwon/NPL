@@ -40,9 +40,11 @@ if(isset($_GET['code'])){
 
 
 
+    }else{
+
+header("Location: register.php");
     }
 
-header("Location: profile.php");
 
 }
 ?>
