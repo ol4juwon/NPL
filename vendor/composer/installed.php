@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '37ed0c9e20c9b45ff2f5b3a499bfaf73cd04058e',
+    'reference' => 'aca162ad37dcdbc1b6dbb3c45f7b71bc42aa8993',
     'name' => '__root__',
   ),
   'versions' => 
@@ -18,7 +18,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '37ed0c9e20c9b45ff2f5b3a499bfaf73cd04058e',
+      'reference' => 'aca162ad37dcdbc1b6dbb3c45f7b71bc42aa8993',
     ),
     'auth0/auth0-php' => 
     array (
@@ -222,6 +222,15 @@
       array (
       ),
       'reference' => 'cc6e6f9b39fe8075b3dabfbaf5b5f645ae1340c9',
+    ),
+    'twilio/sdk' => 
+    array (
+      'pretty_version' => '6.17.0',
+      'version' => '6.17.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'b77446cc36b813122ea888d455f015b2f3ff8ba1',
     ),
   ),
 );

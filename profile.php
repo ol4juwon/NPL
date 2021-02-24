@@ -45,10 +45,20 @@ if(isset($_GET['code'])){
             $_SESSION['user_image'] = $data['picture'];
 
         }
+        
+            $_SESSION['gender'] = $data['gender'];
 
+        
+echo is_array($_SESSION);
         $user = new Users($pdo);
-        $user->create_user($_SESSION);
+        if($user->check_user($_SESSION) == false){
 
+       
+        $user->create_user($_SESSION);
+        }else{
+            header('Location: sale.php');
+
+        }
 
     }else{
 
@@ -61,7 +71,6 @@ header("Location: register.php");
 ?>
     </head>
     <body>
-   <?php  echo $_SESSION['user_first_name'];
-echo $_GET['code']; ?>
+   <?php   ?>
     </body>
 </html>

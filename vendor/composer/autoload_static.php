@@ -26,6 +26,10 @@ class ComposerStaticInita1cadad79d3d2720a9ad1d454263a717
         array (
             'phpseclib3\\' => 11,
         ),
+        'T' => 
+        array (
+            'Twilio\\' => 7,
+        ),
         'S' => 
         array (
             'Symfony\\Polyfill\\Php72\\' => 23,
@@ -70,6 +74,10 @@ class ComposerStaticInita1cadad79d3d2720a9ad1d454263a717
         'phpseclib3\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib',
+        ),
+        'Twilio\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/twilio/sdk/src/Twilio',
         ),
         'Symfony\\Polyfill\\Php72\\' => 
         array (

@@ -4,7 +4,8 @@
 include('config.php');
 include('api/config/config.php');
 include 'includes/createUser.php';
-
+global $pdo;
+$user = new Users($pdo);
 $login_button ="";
 
 if(isset($_GET['code'])){
@@ -54,7 +55,6 @@ if(isset($_GET['code'])){
 header("Location: profile.php");
 
 }
-var_dump($_SESSION);
 
 if(!isset($_SESSION['access_token'])){
     try{
@@ -62,33 +62,75 @@ if(!isset($_SESSION['access_token'])){
     }catch(Exception $e){
         echo $e;
     }
-    echo "jkk";
 $login_button = '<a href="'.$auth.'" >Login with google.</a>';
 
 }else{
-    echo '<a href="logout.php">Logout </a> ';
+    header('Location: profile.php');
 }
 
 ?>
+           <!-- Bootstrap core CSS -->
+           <link href="css/bootstrap.css" rel="stylesheet">
+        
+        <link href="css/default.css" rel="stylesheet">
+        
+
 </head>
 <body>
-<p>he dey </p>
+
+    <div class="content-container" >
+        <center><h2>Register</h2></center><center>
+        <form class="form-conrol" style="margin: 10px 10px 10px 10px; padding: 10px 10px 10px 10px; ;">
+            <div class="form-row">
+                <div class="form-group form-edit col-sm-3" >
+                <label for="name-txt"> First Name</label>
+                <input type="text" class="form-control" required id="name-txt" name="Fname" >
+                </div>
+                <div class="form-group form-edit col-sm-3" >
+                <label for="name-txt"> Last Name</label>
+                <input type="text" class="form-control" required id="lname-txt" name="Lname" >
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group form-edit col-sm-3" >
+                <label for="email-txt"> Email Address</label>
+                <input type="text" class="form-control" required id="email-txt" name="email" >
+                </div>
+                <div class="form-group form-edit col-sm-3" >
+                <label for="phone-txt"> Phone Number</label>
+                <input type="text" class="form-control" required id="phone-txt" name="phonr" >
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group form-edit col-sm-3" >
+                <label for="password-txt"> Password</label>
+                <input type="password" class="form-control" required id="password-txt" name="pword" >
+                </div>
+                <div class="form-group form-edit col-sm-3" >
+                <label for="cpass-txt"> Confirm password</label>
+                <input type="password" class="form-control" required id="cpass-txt" name="cpass" >
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group form-edit col-sm-3" >
+                    &nbsp;
+                <input type="submit" class="btn btn-secondary form-control" value="Register" required id="password-txt" name="register"  >
+                </div>
+                <div class="form-group form-edit col-sm-3" >
+                <a class="form-control btn btn-danger btn-secondary" href="<?php echo $auth; ?>">Sign Up with google</a>
+                </div>
+            </div>
+        </form>
+        
+        <h2>&HorizontalLine;Login&HorizontalLine;</h2> 
+</center>
+    </div>
+
 <?php 
  
-if($login_button == ''){
-    if(isset($_SESSION)){
-var_dump($_SESSION);
-    
-    echo '<img src="'.$_SESSION['user_image'].'" >';
-    echo $_SESSION['user_first_name'];
-}
-}else{
-   echo  $login_button."llm";
-}
+
 
 ?>
-<h1>Hi</h1>
-<?Php // echo $_SESSION['user_first_name'];
-?>
+
 </body>
 </html>
