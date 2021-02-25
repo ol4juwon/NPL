@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-
+<?php
+ require '../config.php';
+ require '../api/config/config.php';
+?>
 <html>
   <head>
         <meta charset="utf-8">
@@ -7,7 +10,7 @@
         <meta name="description" content="">
         <meta name="author" content="Ol4juwon">
         <meta name="company" content="Nigeria Property Link">
-        <title> Nigeria Property Link::For sale</title>
+        <title> Nigeria Property Link::My Account</title>
 
         <style type="text/css">
             @font-face {
@@ -20,9 +23,9 @@
         
         
             <!-- Bootstrap core CSS -->
-        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="../css/bootstrap.css" rel="stylesheet">
         
-        <link href="css/default.css" rel="stylesheet">
+        <link href="../css/default.css" rel="stylesheet">
         
             <style>
               .bd-placeholder-img {
@@ -40,7 +43,7 @@
               }
             </style>
         
-            
+        <script src="../js/bootstrap.js"></script>
             <link href="navbar-top.css" rel="stylesheet">
           
   </head>
@@ -68,6 +71,17 @@
                   <li class="nav-item">
                     <a class="nav-link" href="contact.php">Contact Us</a>
                   </li>
+                  <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Profile
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#">Edit Profile</a></li>
+                    <li><a class="dropdown-item" href="#">Add Property</a></li>
+                    
+                    <li><a class="dropdown-item" href="../logout.php">Logout</a></li>
+                  </ul>
+                </li>
                 </ul>
                 <form class="d-flex">
                 <?php if(!isset($_SESSION['access_token'])){ 

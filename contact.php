@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<?php
+
+include 'config.php';
+?>
 <html>
     <head>
         <meta charset="utf-8">
@@ -67,10 +71,28 @@
                   <li class="nav-item active">
                     <a class="nav-link" aria-current="page" href="contact.php">Contact Us</a>
                   </li>
+                  <?php if(isset($_SESSION['user_first_name'])){ ?>
+                      <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                  Profile
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                  <li><a class="dropdown-item" href="#">Edit Profile</a></li>
+                                  <li><a class="dropdown-item" href="#">Add Property</a></li>
+                                  
+                                  <li><a class="dropdown-item" href="../logout.php">Logout</a></li>
+                                </ul>
+                              </li>
+                  <?php }?>
                 </ul>
                 <form class="d-flex">
-                   <button class="btn btn-secondary" type="submit">Register/Sign In</button>
-                </form>
+                <?php
+        if(!isset($_SESSION['user_first_name'])){ 
+        echo '<a href="register.php" class="btn btn-grey btn-secondary" > Register/Sign In</a>';
+        }else{
+          echo '<img height="50px" style="border-radius:50%;" src="'.$_SESSION['user_image'].'"> ';
+        }
+        ?>                </form>
               </div>
             </div>
           </div>

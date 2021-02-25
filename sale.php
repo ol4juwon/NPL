@@ -13,7 +13,7 @@ include("api/config/config.php");
         <meta name="author" content="Ol4juwon">
         <meta name="company" content="Nigeria Property Link">
         <title> Nigeria Property Link::For sale</title>
-
+<Script src="js/bootstrap.js" ></Script>
         <style type="text/css">
             @font-face {
                 font-family: 'Roboto';
@@ -73,12 +73,25 @@ include("api/config/config.php");
                   <li class="nav-item">
                     <a class="nav-link" href="contact.php">Contact Us</a>
                   </li>
+                  <?php if(isset($_SESSION['user_first_name'])){ ?>
+                      <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                  Profile
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                  <li><a class="dropdown-item" href="#">Edit Profile</a></li>
+                                  <li><a class="dropdown-item" href="#">Add Property</a></li>
+                                  
+                                  <li><a class="dropdown-item" href="../logout.php">Logout</a></li>
+                                </ul>
+                              </li>
+                  <?php }?>
                 </ul>
                 <form class="d-flex">
                 <?php if(!isset($_SESSION['access_token'])){ 
         echo '<a href="register.php" class="btn btn-grey btn-secondary" > Register/Sign In</a>';
         }else{
-          echo '<img src="'.$_SESSION['user_image'].'"> <a href="logout.php" class="btn-secondary">Logout </a> ';
+          echo '<img height="50px" style="border-radius:50%" src="'.$_SESSION['user_image'].'"> ';
         }
         ?></form>
               </div> <!-- collapse-->
