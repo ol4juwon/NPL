@@ -43,6 +43,7 @@ class Users{
            echo $e->getMEssage();
 
        }
+
         // if($this->pdo->query($query)){
         //     $msg = "user successfully created";
         //     return $msg;
@@ -60,7 +61,7 @@ class Users{
 
             //echo $stmt;
             $stmt =  $this->pdo->prepare($sql);
-            $stmt->execute([$data['user_email_address']]);
+            $stmt->execute([$data]);
 
            // var_dump( $query);
            
@@ -76,14 +77,23 @@ echo $e;
     }
 
     // TODO : regular email login
-    function login(){
+    function login($data){
+        $stmt = "SELECT * from users where username=? and password=? ";
 
+    }
+
+    // TODO : update last login
+
+    function lastLogin($data){
+
+        
     }
 
     // TODO : sms verification
 
     // Todo : email verification 
 
+    // TODO : check
 
 
 }

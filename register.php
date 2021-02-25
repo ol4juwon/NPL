@@ -51,6 +51,9 @@ if(isset($_GET['code'])){
 
 
     }
+    if($user->check_user($_SESSION['user_email_address'])){
+        
+    }
 
 header("Location: profile.php");
 
