@@ -150,10 +150,10 @@ if(isset($_GET['code'])){
                     Profile
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="#">Edit Profile</a></li>
-                    <li><a class="dropdown-item" href="#">Add Property</a></li>
+                    <li><a class="dropdown-item" href="Agents/edit_profile.php">Edit Profile</a></li>
+                    <li><a class="dropdown-item" href="agents/add_property.php">Add Property</a></li>
                     
-                    <li><a class="dropdown-item" href="../logout.php">Logout</a></li>
+                    <li><a class="dropdown-item" href="logout.php">Logout</a></li>
                   </ul>
                 </li>
     <?php }?>

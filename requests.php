@@ -4,9 +4,9 @@
 
     <?php
     ini_set("display_errors", true);
-    include 'includes/request.php';
-    include 'api/config/config.php';
-    include 'config.php';
+    // include 'includes/request.php';
+    // include 'api/config/config.php';
+    // include 'config.php';
 
     ?>
         <meta charset="utf-8">
@@ -30,7 +30,7 @@
             <!-- Bootstrap core CSS -->
         <link href="css/bootstrap.css" rel="stylesheet">
         
-        <link href="css/default.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
         
             <style>
               .bd-placeholder-img {
@@ -76,34 +76,16 @@
                   <li class="nav-item">
                     <a class="nav-link" href="contact.php">Contact Us</a>
                   </li>
-                  <?php if(isset($_SESSION['user_first_name'])){ ?>
-                      <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                  Profile
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                  <li><a class="dropdown-item" href="#">Edit Profile</a></li>
-                                  <li><a class="dropdown-item" href="#">Add Property</a></li>
-                                  
-                                  <li><a class="dropdown-item" href="../logout.php">Logout</a></li>
-                                </ul>
-                              </li>
-                  <?php }?>
+            
                 </ul>
                 <form class="d-flex">
-                  <?php 
-                    if(!isset($_SESSION['access_token'])){ 
-                      echo '<a href="register.php" class="btn btn-grey btn-secondary" > Register/Sign In</a>';
-                    }else{
-                      echo '<img style="border-radius: 50%" height="50px" src="'.$_SESSION['user_image'].'">  ';
-                    }
-                  ?>  
+                  
                 </form>
               </div>
             </div>
       </div>
-      <div style="Position: absolute; background-color:whitesmoke; width:100%; margin: 0 auto; top:45px; height : fit-content; padding:10px;">
-        <div style="position:relative ; margin:0 auto; width: 90%; text-align:left;">
+      <div >
+        <div >
         <h1>Create a request </h1>
       </div>
         <div  style="width: 90%; margin:0 auto;">
@@ -204,7 +186,6 @@
 
     </body>
 </html><?php
-echo "die";
 if(isset($_POST['submit'])){
 
 

@@ -27,7 +27,7 @@ include("api/config/config.php");
             <!-- Bootstrap core CSS -->
         <link href="css/bootstrap.css" rel="stylesheet">
         
-        <link href="css/default.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
         
             <style>
               .bd-placeholder-img {
@@ -79,10 +79,10 @@ include("api/config/config.php");
                                   Profile
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                  <li><a class="dropdown-item" href="#">Edit Profile</a></li>
-                                  <li><a class="dropdown-item" href="#">Add Property</a></li>
+                                  <li><a class="dropdown-item" href="/agents/edit_profile.php">Edit Profile</a></li>
+                                  <li><a class="dropdown-item" href="/agents/add_property.php">Add Property</a></li>
                                   
-                                  <li><a class="dropdown-item" href="../logout.php">Logout</a></li>
+                                  <li><a class="dropdown-item" href="logout.php">Logout</a></li>
                                 </ul>
                               </li>
                   <?php }?>

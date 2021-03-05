@@ -80,7 +80,7 @@ include 'config.php';
                                   <li><a class="dropdown-item" href="#">Edit Profile</a></li>
                                   <li><a class="dropdown-item" href="agents/add_property.php">Add Property</a></li>
                                   
-                                  <li><a class="dropdown-item" href="../logout.php">Logout</a></li>
+                                  <li><a class="dropdown-item" href="logout.php">Logout</a></li>
                                 </ul>
                               </li>
                   <?php }?>

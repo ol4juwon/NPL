@@ -80,13 +80,27 @@ echo $e;
     function login($data){
         $stmt = "SELECT * from users where username=? and password=? ";
 
+        try{
+            $result = $this->pdo->prepare($stmt)->execute($data);
+        }catch(PDOException $ex){
+            $msg = $ex->getMessage();
+        }catch(Exception $e){
+            $msg = $e->getMessage();
+        }
+
+        if($result->rowCount() == 1){
+            return $result;
+        }else{
+            return $msg;
+        }
+
     }
 
     // TODO : update last login
 
     function lastLogin($data){
 
-        
+
     }
 
     // TODO : sms verification

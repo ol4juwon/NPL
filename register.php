@@ -61,7 +61,8 @@ header("Location: profile.php");
 
 if(!isset($_SESSION['access_token'])){
     try{
-    $auth = $gClient->createAuthUrl();
+        echo "dd";
+   echo $auth = $gClient->createAuthUrl();
     }catch(Exception $e){
         echo $e;
     }
@@ -82,7 +83,7 @@ $login_button = '<a href="'.$auth.'" >Login with google.</a>';
 <body>
 
     <div class="content-container" >
-        <center><h2>Register</h2></center><center>
+    <h2>Register</h2>
         <form class="form-conrol" style="margin: 10px 10px 10px 10px; padding: 10px 10px 10px 10px; ;">
             <div class="form-row">
                 <div class="form-group form-edit col-sm-3" >
@@ -119,14 +120,15 @@ $login_button = '<a href="'.$auth.'" >Login with google.</a>';
                     &nbsp;
                 <input type="submit" class="btn btn-secondary form-control" value="Register" required id="password-txt" name="register"  >
                 </div>
-                <div class="form-group form-edit col-sm-3" >
-                <a class="form-control btn btn-danger btn-secondary" href="<?php echo $auth; ?>">Sign Up with google</a>
-                </div>
+                
             </div>
         </form>
         
-        <h2>&HorizontalLine;Login&HorizontalLine;</h2> 
-</center>
+        <h2>Login</h2> 
+        <div class="form-group form-edit col-sm-3" >
+                <a href="<?php  echo $auth; ?>" >Login with google</a>
+                </div>
+
     </div>
 
 <?php 

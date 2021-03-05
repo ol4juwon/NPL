@@ -6,7 +6,7 @@ require_once("vendor/autoload.php");
 // Google API configuration
 define('GOOGLE_CLIENT_ID', '403949553367-u5mto5tmnqttm68j4n37a4hkr1ssukh7.apps.googleusercontent.com');
 define('GOOGLE_CLIENT_SECRET', '6L5M-TPh3-kRK-KgV_O8TKCr');
-define('GOOGLE_REDIRECT_URL', 'http://localhost:8888/profile.php');
+define('GOOGLE_REDIRECT_URL', 'http://localhost:8888/nplv1/profile.php');
 
 // Start session
 if(!session_id()){

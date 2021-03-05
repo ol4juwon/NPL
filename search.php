@@ -2,6 +2,7 @@
 require("api/config/config.php");
 require("includes/sale_search.php");
 require("includes/rent_search.php");
+require 'config.php';
 ?>
 
 <!DOCTYPE html>
@@ -73,9 +74,28 @@ require("includes/rent_search.php");
                   <li class="nav-item">
                     <a class="nav-link" href="contact.php">Contact Us</a>
                   </li>
+                  <?php if(isset($_SESSION['user_first_name'])){ ?>
+        <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Profile
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="Agents/edit_profile.php">Edit Profile</a></li>
+                    <li><a class="dropdown-item" href="agents/add_property.php">Add Property</a></li>
+                    
+                    <li><a class="dropdown-item" href="logout.php">Logout</a></li>
+                  </ul>
+                </li>
+    <?php }?>
                 </ul>
                 <form class="d-flex">
-                   <button class="btn btn-secondary" type="submit">Register/Sign In</button>
+                  <?php
+                    if(!isset($_SESSION['user_first_name'])){ 
+                    echo '<a href="register.php" class="btn btn-grey btn-secondary" > Register/Sign In</a>';
+                    }else{
+                      echo '<img height="50px" style="border-radius:50%;" src="'.$_SESSION['user_image'].'"> ';
+                    }
+                  ?>
                 </form>
               </div> <!-- collapse-->
       </div><!-- container fluid-->

@@ -1,17 +1,6 @@
 <?php
 require "vendor/autoload.php";
 include 'config.php';
-// use Auth0\SDK\Auth0;
-
-// $auth0 = new Auth0([
-//   'domain' => 'broadview.us.auth0.com',
-//   'client_id' => 'gXs2kz7zyMpuswHUNm4pGByr7ffCvsy9',
-//   'client_secret' => '4tJzDDMRcuOW81JeKxezADhgg8swwSUsrE-vvW-Vuy7J2kTbvF7WOTGpKsPikt4t',
-//   'redirect_uri' => 'http://localhost:8888/callback.php',
-//   'scope' => 'openid profile email',
-// ]);
-
-
 ?>
 <!doctype html>
 <html lang="en">
@@ -38,13 +27,10 @@ include 'config.php';
         unicode-range: U + 0460-052F, U + 1C80-1C88, U + 20B4, U + 2DE0-2DFF, U + A640-A69F, U + FE2E-FE2F;
     }</style>
 
-<!-- auth0 -->
-<script src="https://cdn.auth0.com/js/auth0/9.11/auth0.min.js"></script>
-
-    <!-- Bootstrap core CSS -->
+   <!-- Bootstrap core CSS -->
+    <link href="css/default.css" rel="stylesheet">
 <link href="css/bootstrap.css" rel="stylesheet">
 
-<link href="css/default.css" rel="stylesheet">
 
     <style>
       .bd-placeholder-img {
@@ -99,10 +85,10 @@ include 'config.php';
                                   Profile
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                  <li><a class="dropdown-item" href="#">Edit Profile</a></li>
-                                  <li><a class="dropdown-item" href="#">Add Property</a></li>
+                                  <li><a class="dropdown-item" href="/agents/edit_profile.php">Edit Profile</a></li>
+                                  <li><a class="dropdown-item" href="/agents/add_property.php">Add Property</a></li>
                                   
-                                  <li><a class="dropdown-item" href="../logout.php">Logout</a></li>
+                                  <li><a class="dropdown-item" href="logout.php">Logout</a></li>
                                 </ul>
                               </li>
                   <?php }?>
