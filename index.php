@@ -81,12 +81,12 @@ include 'config.php';
         </li>
         <?php if(isset($_SESSION['user_first_name'])){ ?>
                       <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" href="profile.php" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                   Profile
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                  <li><a class="dropdown-item" href="/agents/edit_profile.php">Edit Profile</a></li>
-                                  <li><a class="dropdown-item" href="/agents/add_property.php">Add Property</a></li>
+                                  <li><a class="dropdown-item" href="profile.php">Profile</a></li>
+                                  <li><a class="dropdown-item" href="agents/add_property.php">Add Property</a></li>
                                   
                                   <li><a class="dropdown-item" href="logout.php">Logout</a></li>
                                 </ul>

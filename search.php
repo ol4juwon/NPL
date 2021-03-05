@@ -76,7 +76,7 @@ require 'config.php';
                   </li>
                   <?php if(isset($_SESSION['user_first_name'])){ ?>
         <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <a class="nav-link dropdown-toggle" href="profile.php" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Profile
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">

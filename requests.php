@@ -4,9 +4,9 @@
 
     <?php
     ini_set("display_errors", true);
-    // include 'includes/request.php';
-    // include 'api/config/config.php';
-    // include 'config.php';
+     include 'includes/request.php';
+     include 'api/config/config.php';
+     include 'config.php';
 
     ?>
         <meta charset="utf-8">
@@ -76,10 +76,28 @@
                   <li class="nav-item">
                     <a class="nav-link" href="contact.php">Contact Us</a>
                   </li>
+                  <?php if(isset($_SESSION['user_first_name'])){ ?>
+                      <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="profile.php" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                  Profile
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                  <li><a class="dropdown-item" href="profile.php">Edit Profile</a></li>
+                                  <li><a class="dropdown-item" href="agents/add_property.php">Add Property</a></li>
+                                  
+                                  <li><a class="dropdown-item" href="logout.php">Logout</a></li>
+                                </ul>
+                              </li>
+                  <?php }?>
             
                 </ul>
                 <form class="d-flex">
-                  
+                <?php if(!isset($_SESSION['access_token'])){ 
+                    echo '<a href="register.php" class="btn btn-grey btn-secondary" > Register/Sign In</a>';
+                    }else{
+                      echo '<img height="50px" style="border-radius:50%" src="'.$_SESSION['user_image'].'"> ';
+                    }
+                  ?>
                 </form>
               </div>
             </div>
@@ -109,7 +127,7 @@
                         <div class="form-group form-edit col-sm-3">
                             <label for="inputState">Bedrooms</label>
                             <select id="inputState" name="bedroom" class="form-control" required>
-                            <option disabled selected>Select an option</option>
+                            <option disabled >Select an option</option>
                               <option>1</option>
                               <option>2</option>
                               <option>3</option>
@@ -189,8 +207,8 @@
 if(isset($_POST['submit'])){
 
 
-$tg =  create_request($_POST,$conn);
-echo $tg;
+$tg =  create_request($_POST);
+
 echo "<script>alert('$tg');</script>"; 
 
     }

@@ -2,7 +2,7 @@
 ini_set("display_errors", true);
 function create_request($data = array()){
     Global $pdo;
-var_dump($data);
+// var_dump($data);
     $name = htmlspecialchars(strip_tags($data['name']));
     $phone = htmlspecialchars(strip_tags($data['phone']));
     $email = htmlspecialchars(strip_tags($data['email']));
