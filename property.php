@@ -1,7 +1,9 @@
 <?php
+ini_set('display_errors',true);
 require "vendor/autoload.php";
 include 'config.php';
 include 'api/config/config.php';
+include 'includes/functions.php';
 if(!isset($_GET['id'])){
 $msg = 'Page not found ';
 echo "<script>alert('$msg');</script>";
@@ -17,11 +19,10 @@ echo "<script>alert('$msg');</script>";
     <title>Nigeria Property Link::</title>
     <!-- /* jquery */ -->
 <script src="http://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-  
+<script src="js/slide.js" ></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
     <style type="text/css">
-
 
 
   @font-face {
@@ -35,6 +36,7 @@ echo "<script>alert('$msg');</script>";
    <!-- Bootstrap core CSS -->
     <link href="css/default.css" rel="stylesheet">
 <link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/slide.css" rel="stylesheet">
 
 
     <style>
@@ -52,7 +54,6 @@ echo "<script>alert('$msg');</script>";
         }
       }
     </style>
-
     
    
 
@@ -115,9 +116,9 @@ echo "<script>alert('$msg');</script>";
 
 $sql = "SELECT * FROM listings where id = ?";
 $id= htmlentities(strip_tags($_GET['id']));
-echo $sql;
+
 $data = [$_GET['id']];
-var_dump($data);
+
 try{
 $res = $pdo->prepare($sql);
 $res->bindParam(1,$id,PDO::PARAM_INT);
@@ -130,8 +131,60 @@ $prop = $res->fetch();
 
 ?>
         <div class="property-page">
-            <div class="prop-img-div">
-                <img src="" alt="" width="100%" height="400px" >
+            <div class="row">
+<?php
+// echo "Agent id: ". $agent_id;
+$SQL = "SELECT * from pictures where listing_id = ?";
+try{
+    
+    $result  = $pdo->prepare($SQL);
+    $result->bindParam(1,$id,PDO::PARAM_INT);
+    // $result->bindParam(2,$agent_id,PDO::PARAM_INT);
+    $result->execute();
+    $images = $result->fetchAll();
+    // echo $images;
+    $i =1;
+    $h = 1;
+        foreach($images as $image){  ?>
+            <div class="column" >
+            <div class="numbertext"><?php echo $h;?></div>
+            <img src="agents/uploads/<?php echo $image['image1'];?>" onclick="openModal();currentSlide(<?php echo $h;?>)" class="hover-shadow">
+            
+            </div>
+            <?php
+      $h++; }
+}catch(PDOException $e){
+
+    echo $e;
+}
+?>
+
+<div id="myModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+  
+      <?php foreach($images as $image) {
+         ?>
+   <div class="mySlides">
+      <div class="numbertext"><?php echo $i; ?> / 4</div>
+      <img src="agents/uploads/<?php echo $image['image1'];?>" style="width:100%">
+    </div>
+<?php
+
+$i++;
+} ?>
+ <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+    <?php foreach($images as $image){ ?>
+    <div class="column">
+      <img class="demo" src="agents/uploads/<?php echo $image['image1'];?>" onclick="currentSlide(1)">
+    </div>
+    <?php } ?>
+  </div>
+  </div>
             </div>
             <div class="prop-detals">
                 <h2><?php echo $prop['title'];  ?></h2>
