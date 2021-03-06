@@ -1,13 +1,17 @@
-<?php 
-function turing (&$x1 = 0,&$x2 = 1){
-  $result = $x1 + $x2;
-  $x1 = $x2;
-  $x2 = $result;
-  return $result;
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="kmk.css" rel="stylesheet">
 
-}
-
-for($i = 0;$i <10;$i++) {
-  echo turing().',';
-}
-?>
+  </head>
+  <body>
+    <div class="grid">
+      <div class="navbar">navbar</div>
+      <div class="welcome">Welcome</div>
+      <div class="search">search</div>
+      <div class="latest">latest</div>
+      <div class="lprops" >lprops</div>
+      <div class="footer">footer</div>
+    </div>
+  </body>
+</html>

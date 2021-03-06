@@ -1,0 +1,46 @@
+*{
+    background-color:#fff;
+margin: 0px;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+    grid-template-rows: 70px 400px 164px 315px ;
+    grid-template-areas: 
+    "navbar  navbar navbar"
+    ". welcome ."
+    " . search . "
+    " latest search  latest "
+    ;
+    ;
+
+}
+
+.grid div:nth-child(odd){
+    background-color: yellowgreen;
+}
+
+.grid div:nth-child(even){
+    background-color: bisque;
+}
+
+.navbar{
+    grid-area: navbar;
+}
+
+.welcome{
+    grid-area: welcome;
+}
+.search{
+    grid-area: search;
+}
+.latest{
+    grid-area: latest;
+}
+.lprops{
+    grid-area: lprops;
+}
+.footer{
+    grid-area: footer;
+}

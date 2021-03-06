@@ -93,7 +93,7 @@
                 </ul>
                 <form class="d-flex">
                 <?php if(!isset($_SESSION['access_token'])){ 
-                    echo '<a href="register.php" class="btn btn-grey btn-secondary" > Register/Sign In</a>';
+                    echo '<a href="register.php" class="btn btn-grey btn-secondary" > Sign In</a>';
                     }else{
                       echo '<img height="50px" style="border-radius:50%" src="'.$_SESSION['user_image'].'"> ';
                     }
