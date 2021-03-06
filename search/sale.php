@@ -25,10 +25,10 @@ $select_stm .= " LIMIT {$start_page},{$limit} ";
 //$select_stm .= " order by id asc ";
 $result = $pdo->query($select_stm);
 
-    // $result = $stmt->query($stmt);
-    $sql_paginate  = "SELECT count(id) as id FROM listings";
-    $row1 = $pdo->query($sql_paginate);
-    var_dump($row1);
+    // // $result = $stmt->query($stmt);
+    // $sql_paginate  = "SELECT count(id) as id FROM listings";
+    // $row1 = $pdo->query($sql_paginate);
+    // var_dump($row1);
   //  var_dump($propertyCount);
     $total = $result->rowCount();
     $pages = ceil($total / $limit);

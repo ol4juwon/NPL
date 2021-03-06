@@ -55,7 +55,7 @@
     <body>
       <div class="navbar navbar-expand-md fixed-top navbar-light bg-white ">
             <div class="container-fluid">
-              <a class="navbar-brand" href="#"><img src="" alt="Logo" ></a>
+              <a class="navbar-brand" href="#">NPL</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
