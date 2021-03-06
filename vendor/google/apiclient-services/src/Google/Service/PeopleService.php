@@ -48,7 +48,7 @@ class Google_Service_PeopleService extends Google_Service
   /** See and download your exact date of birth. */
   const USER_BIRTHDAY_READ =
       "https://www.googleapis.com/auth/user.birthday.read";
-  /** View your email addresses. */
+  /** See and download all of your Google Account email addresses. */
   const USER_EMAILS_READ =
       "https://www.googleapis.com/auth/user.emails.read";
   /** See your gender. */
@@ -244,6 +244,23 @@ class Google_Service_PeopleService extends Google_Service
                   'type' => 'string',
                 ),
               ),
+            ),'search' => array(
+              'path' => 'v1/otherContacts:search',
+              'httpMethod' => 'GET',
+              'parameters' => array(
+                'pageSize' => array(
+                  'location' => 'query',
+                  'type' => 'integer',
+                ),
+                'query' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'readMask' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+              ),
             ),
           )
         )
@@ -374,6 +391,23 @@ class Google_Service_PeopleService extends Google_Service
                   'repeated' => true,
                 ),
                 'syncToken' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+              ),
+            ),'searchContacts' => array(
+              'path' => 'v1/people:searchContacts',
+              'httpMethod' => 'GET',
+              'parameters' => array(
+                'pageSize' => array(
+                  'location' => 'query',
+                  'type' => 'integer',
+                ),
+                'query' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'readMask' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),

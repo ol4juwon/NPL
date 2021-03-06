@@ -30,7 +30,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'aca162ad37dcdbc1b6dbb3c45f7b71bc42aa8993',
+    'reference' => '31bb066579de692c3b8b902c2fc02c4420d6443c',
     'name' => '__root__',
   ),
   'versions' => 
@@ -42,16 +42,25 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'aca162ad37dcdbc1b6dbb3c45f7b71bc42aa8993',
+      'reference' => '31bb066579de692c3b8b902c2fc02c4420d6443c',
     ),
     'auth0/auth0-php' => 
     array (
-      'pretty_version' => '7.5.0',
-      'version' => '7.5.0.0',
+      'pretty_version' => '7.6.2',
+      'version' => '7.6.2.0',
       'aliases' => 
       array (
       ),
-      'reference' => '29c74a3d6c7ff7c3c1d294d204ecabcb83e589e1',
+      'reference' => '8d37d23b8d0b92525b05b0a22c35ffd28e5fcec5',
+    ),
+    'auth0/php-jwt' => 
+    array (
+      'pretty_version' => '3.3.4',
+      'version' => '3.3.4.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'a0daa1a728cf85230843ebb8c1183047fe493284',
     ),
     'firebase/php-jwt' => 
     array (
@@ -73,12 +82,12 @@ private static $installed = array (
     ),
     'google/apiclient-services' => 
     array (
-      'pretty_version' => 'v0.160.0',
-      'version' => '0.160.0.0',
+      'pretty_version' => 'v0.162.0',
+      'version' => '0.162.0.0',
       'aliases' => 
       array (
       ),
-      'reference' => 'b8a448056ced89d1bc2d68ca10c22e7b2ed06512',
+      'reference' => '9085ff13f32f5baf8b3d2917ea63e2e029ecedb6',
     ),
     'google/auth' => 
     array (
@@ -91,12 +100,12 @@ private static $installed = array (
     ),
     'guzzlehttp/guzzle' => 
     array (
-      'pretty_version' => '6.5.5',
-      'version' => '6.5.5.0',
+      'pretty_version' => '7.2.0',
+      'version' => '7.2.0.0',
       'aliases' => 
       array (
       ),
-      'reference' => '9d4290de1cfd701f38099ef7e183b64b4b7b0c5e',
+      'reference' => '0aa74dfb41ae110835923ef10a9d803a22d50e79',
     ),
     'guzzlehttp/promises' => 
     array (
@@ -115,15 +124,6 @@ private static $installed = array (
       array (
       ),
       'reference' => '53330f47520498c0ae1f61f7e2c90f55690c06a3',
-    ),
-    'lcobucci/jwt' => 
-    array (
-      'pretty_version' => '3.4.4',
-      'version' => '3.4.4.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'ff92156cd27d3abe7fc8814516ae0615215f01ae',
     ),
     'monolog/monolog' => 
     array (
@@ -169,6 +169,22 @@ private static $installed = array (
       array (
       ),
       'reference' => 'd11b50ad223250cf17b86e38383413f5a6764bf8',
+    ),
+    'psr/http-client' => 
+    array (
+      'pretty_version' => '1.0.1',
+      'version' => '1.0.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '2dfb5f6c5eff0e91e20e913f8c5452ed95b86621',
+    ),
+    'psr/http-client-implementation' => 
+    array (
+      'provided' => 
+      array (
+        0 => '1.0',
+      ),
     ),
     'psr/http-message' => 
     array (
@@ -219,42 +235,6 @@ private static $installed = array (
       array (
       ),
       'reference' => '120b605dfeb996808c31b6477290a714d356e822',
-    ),
-    'symfony/polyfill-intl-idn' => 
-    array (
-      'pretty_version' => 'v1.22.0',
-      'version' => '1.22.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '0eb8293dbbcd6ef6bf81404c9ce7d95bcdf34f44',
-    ),
-    'symfony/polyfill-intl-normalizer' => 
-    array (
-      'pretty_version' => 'v1.22.0',
-      'version' => '1.22.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '6e971c891537eb617a00bb07a43d182a6915faba',
-    ),
-    'symfony/polyfill-php72' => 
-    array (
-      'pretty_version' => 'v1.22.0',
-      'version' => '1.22.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'cc6e6f9b39fe8075b3dabfbaf5b5f645ae1340c9',
-    ),
-    'twilio/sdk' => 
-    array (
-      'pretty_version' => '6.17.0',
-      'version' => '6.17.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'b77446cc36b813122ea888d455f015b2f3ff8ba1',
     ),
   ),
 );

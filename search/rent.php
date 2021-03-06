@@ -1,4 +1,8 @@
 <?php
+ini_set('display_errors',true);
+include 'includes/functions.php';
+
+
 
 
 function searchRents($data = array(),$page_num){
@@ -18,47 +22,51 @@ $select_stm .= " WHERE ";
 $select_stm .= " (number_beds >= '".$bed."'  "; 
 $select_stm .= " AND  category = 'rent' AND location  = '".$location."') ";
 $select_stm .= " OR (price > '".$s_min_price. "' AND price < '".$s_max_price. "')";
-$select_stm .= " AND type = '".$prop_type."' ";
+$select_stm .= " OR type = '".$prop_type."' ";
 $select_stm .= " LIMIT {$start_page},{$limit} ";
+try{
 //$select_stm .= " order by id asc ";
 $result = $pdo->query($select_stm);
 
     // $result = $stmt->query($stmt);
-    $sql_paginate  = "SELECT count(id) as id FROM listings";
-    $row1 = $pdo->query($sql_paginate);
-    var_dump($row1);
+    // $sql_paginate  = "SELECT count(id) as id FROM listings";
+    // $row1 = $pdo->query($sql_paginate);
+    // var_dump($result);
   //  var_dump($propertyCount);
-    $total = $row1->rowCount();
+    $total = $result->rowCount();
+}catch(PDOException $e){
+    echo $e;
+}
+    // echo "total is ".$total;
     $pages = ceil($total / $limit);
     $previous = $page_num - 1;
     $next = $page_num + 1;
 
     
-    echo "  <div class=\"res_bar\" ><div>Results: Page {$page_num} of {$pages} </div><div>";
-        if($page_num != 1){
-            $previous = $page_num-1;
-        echo "<a href=\"sale.php?page={$previous}\">Previous</a>";  }
+    echo "  <div class=\"res_bar\" ><div>Results:{$total} Page {$page_num} of {$pages} </div><div>";
+        if($page_num != 1){ 
+            $previous = $page_num-1;?>
+        <a href="sale.php?page=<?php echo $previous ?>">Previous</a>  <?php }
 
         echo "<a href=\"sale.php?page={$page_num}\">{$page_num}</a>"; 
-        if($next == $pages){
-        echo "<a href=\"sale.php?page={$next}\">Next</a>"; }
+        if($next == $pages){?>
+        <a href="sale.php?page=<?php echo $next; ?>">Next</a>";<?php }
         echo "</div></div><div>";
-       // $rows = $result->fetch(MYSQLI_ASSOC);
-        foreach($result as $row):
-            echo   " <div><div class=\"property-card\" style=\"box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-            transition: 0.3s;\">";
-            echo "<div style=\"width: 30%;\">";
+        foreach($result as $row): ?>
+            <div><div class="property-card" style="box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            transition: 0.3s;">
+            <div style="width: 30%;">
          
-            echo  "<img class=\"img-fluid\" src=\"img/bernard-hermant-M0k4llbRpHU-unsplash 1.png\" alt=\"property card\" height=\"200px\" width=\"100%\">";
-            echo "</div>";
-            echo "<div style=\" padding:15px; width:70%;\">";
-            echo  "<h2>{$row['title']} </h2>";
-            echo "<h4>{$row['location']}</h4>";
-            echo "<p>{$row['Description']} </p>";
-            echo " <button class=\"btn btn-outline-secondary \" style=\"margin: 5px;\" >{$row['number_beds']} Bedrooms</button> <button class=\"btn btn-outline-secondary \" >{$row['toilets']} Toilets</button> <button class=\"btn btn-outline-secondary \" >{$row['bathrooms']} bathroom</button>  ";
-            echo "<p class=\"alert-link alert-light\" style=\"text-align:right;\"><a style=\"text-decoration:none;\" class=\"btn-light\" href=\"property.php?id={$row['id']}\">More Details–––––></a></p> ";
-            echo "</div></div> &nbsp;";
-        endforeach;
+            <img class="img-fluid" src="agents/uploads/<?php echo getPropImg($row['id']); ?>" alt="property card" height="200px" width="100%">
+            </div>
+            <div style=" padding:15px; width:70%;">
+            <h2><?php echo $row['title']; ?></h2>
+            <h4><?php echo $row['location'] ; ?></h4>
+            <p><?php echo $row['Description'];?> </p>
+            <button class="btn btn-outline-secondary " style="margin: 5px;" ><?php echo $row['number_beds']; ?>Bedrooms</button> <button class="btn btn-outline-secondary " ><?php //$row['toilets']; ?> Toilets</button> <button class="btn btn-outline-secondary " ><?php //$row['bathrooms'];?>bathroom</button>  
+            <p class="alert-link alert-light" style="text-align:right;"><a style="text-decoration:none;" class="btn-light" href="property.php?id=<?php echo $row['id'];?>">More Details–––––></a></p> 
+            </div></div> &nbsp;
+        <?php endforeach;
     echo "</div>";
     
 }else{
@@ -70,7 +78,7 @@ $result = $pdo->query($select_stm);
         echo $pdo->error;
     }
        // $result = $stmt->query($stmt);
-    $sql_paginate  = "SELECT count(id) as id FROM listings where category = 'sell' order by date_added ASC ";
+    $sql_paginate  = "SELECT count(id) as id FROM listings where category = 'rent' order by date_added ASC ";
    // $sql_paginate  = "SELECT count(id) as id FROM listings";
     $row1 = $pdo->query($sql_paginate);
     $total = $row1->rowCount();
@@ -86,21 +94,21 @@ $result = $pdo->query($select_stm);
     if($next == $pages){
     echo "<a class=\"btn-light\" href=\"sale.php?page={$next}\">Next</a>"; }
     echo "</div></div>";
-     foreach($result as $row) :
-        echo   " <div><div class=\"property-card\" style=\"box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-        transition: 0.3s;\">";
-        echo "<div style=\"width: 30%;\">";
+     foreach($result as $row) :?>
+         <div><div class="property-card" style="box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;">
+        <div style="width: 30%;">
      
-        echo  "<img class=\"img-fluid\" src=\"img/bernard-hermant-M0k4llbRpHU-unsplash 1.png\" alt=\"property card\" height=\"200px\" width=\"100%\">";
-        echo "</div>";
-        echo "<div style=\" padding:15px; width:70%;\">";
-        echo  "<h2>{$row['title']} </h2>";
-        echo "<h4>{$row['location']}</h4>";
-        echo "<p>{$row['Description']} </p>";
-        echo " <button class=\"btn btn-outline-secondary \" style=\"margin: 5px;\" >{$row['number_beds']} Bedrooms</button> <button class=\"btn btn-outline-secondary \" > Toilets</button> <button class=\"btn btn-outline-secondary \" > bathroom</button>  ";
-        echo "<p class=\"alert-link alert-light\" style=\"text-align:right;\"><a style=\"text-decoration:none;\" class=\"btn-light\" href=\"property.php?id={$row['id']}\">More Details–––––></a></p> ";
-        echo "</div></div> &nbsp;";
-     endforeach;
+        <img class="img-fluid" src="agents/uploads/<?php echo getPropImg($row['id']); ?>" alt="property card" height="200px" width="100%">";
+        </div>
+        <div style=" padding:15px; width:70%;">
+        <h2><?php echo $row['title']; ?> </h2>
+        <h4><?php echo $row['location'];?></h4>
+        <p><?php echo $row['Description']; ?> </p>
+        <button class="btn btn-outline-secondary " style="margin: 5px;" ><?php echo $row['number_beds'];?> Bedrooms</button> <button class="btn btn-outline-secondary " > Toilets</button> <button class="btn btn-outline-secondary " > bathroom</button>  
+        <p class="alert-link alert-light" style="text-align:right;"><a style="text-decoration:none;" class="btn-light" href="property.php?id=<?php echo $row['id'];?>">More Details–––––></a></p> 
+        </div></div> &nbsp;
+    <?php endforeach;
 }
 
 }

@@ -95,6 +95,7 @@ class Google_Service_Compute extends Google_Service
   public $regionHealthChecks;
   public $regionInstanceGroupManagers;
   public $regionInstanceGroups;
+  public $regionInstances;
   public $regionNetworkEndpointGroups;
   public $regionNotificationEndpoints;
   public $regionOperations;
@@ -4406,6 +4407,25 @@ class Google_Service_Compute extends Google_Service
                   'type' => 'string',
                 ),
               ),
+            ),'bulkInsert' => array(
+              'path' => 'projects/{project}/zones/{zone}/instances/bulkInsert',
+              'httpMethod' => 'POST',
+              'parameters' => array(
+                'project' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+                'zone' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+                'requestId' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+              ),
             ),'delete' => array(
               'path' => 'projects/{project}/zones/{zone}/instances/{instance}',
               'httpMethod' => 'DELETE',
@@ -4509,6 +4529,31 @@ class Google_Service_Compute extends Google_Service
                 ),
                 'instance' => array(
                   'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+              ),
+            ),'getEffectiveFirewalls' => array(
+              'path' => 'projects/{project}/zones/{zone}/instances/{instance}/getEffectiveFirewalls',
+              'httpMethod' => 'GET',
+              'parameters' => array(
+                'project' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+                'zone' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+                'instance' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+                'networkInterface' => array(
+                  'location' => 'query',
                   'type' => 'string',
                   'required' => true,
                 ),
@@ -6250,6 +6295,21 @@ class Google_Service_Compute extends Google_Service
               ),
             ),'get' => array(
               'path' => 'projects/{project}/global/networks/{network}',
+              'httpMethod' => 'GET',
+              'parameters' => array(
+                'project' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+                'network' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+              ),
+            ),'getEffectiveFirewalls' => array(
+              'path' => 'projects/{project}/global/networks/{network}/getEffectiveFirewalls',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'project' => array(
@@ -9214,6 +9274,35 @@ class Google_Service_Compute extends Google_Service
                   'required' => true,
                 ),
                 'instanceGroup' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+                'requestId' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+              ),
+            ),
+          )
+        )
+    );
+    $this->regionInstances = new Google_Service_Compute_Resource_RegionInstances(
+        $this,
+        $this->serviceName,
+        'regionInstances',
+        array(
+          'methods' => array(
+            'bulkInsert' => array(
+              'path' => 'projects/{project}/regions/{region}/instances/bulkInsert',
+              'httpMethod' => 'POST',
+              'parameters' => array(
+                'project' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+                'region' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,

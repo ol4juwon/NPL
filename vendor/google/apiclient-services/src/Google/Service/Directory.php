@@ -98,7 +98,7 @@ class Google_Service_Directory extends Google_Service
   /** View user aliases on your domain. */
   const ADMIN_DIRECTORY_USER_ALIAS_READONLY =
       "https://www.googleapis.com/auth/admin.directory.user.alias.readonly";
-  /** View users on your domain. */
+  /** See info about users on your domain. */
   const ADMIN_DIRECTORY_USER_READONLY =
       "https://www.googleapis.com/auth/admin.directory.user.readonly";
   /** Manage data access permissions for users on your domain. */
@@ -944,6 +944,10 @@ class Google_Service_Directory extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
+                'allowPlus' => array(
+                  'location' => 'query',
+                  'type' => 'boolean',
+                ),
               ),
             ),'get' => array(
               'path' => 'admin/directory/v1/customer/{customerId}/orgunits/{+orgUnitPath}',
@@ -958,6 +962,10 @@ class Google_Service_Directory extends Google_Service
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
+                ),
+                'allowPlus' => array(
+                  'location' => 'query',
+                  'type' => 'boolean',
                 ),
               ),
             ),'insert' => array(
@@ -1002,6 +1010,10 @@ class Google_Service_Directory extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
+                'allowPlus' => array(
+                  'location' => 'query',
+                  'type' => 'boolean',
+                ),
               ),
             ),'update' => array(
               'path' => 'admin/directory/v1/customer/{customerId}/orgunits/{+orgUnitPath}',
@@ -1016,6 +1028,10 @@ class Google_Service_Directory extends Google_Service
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
+                ),
+                'allowPlus' => array(
+                  'location' => 'query',
+                  'type' => 'boolean',
                 ),
               ),
             ),
