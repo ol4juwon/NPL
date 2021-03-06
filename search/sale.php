@@ -72,8 +72,12 @@ $result = $pdo->query($select_stm);
        // $result = $stmt->query($stmt);
     $sql_paginate  = "SELECT count(id) as id FROM listings where category = 'sell' order by date_added ASC ";
    // $sql_paginate  = "SELECT count(id) as id FROM listings";
+   try{
     $row1 = $pdo->query($sql_paginate);
     $total = $row1->rowCount();
+   }catch(PDOException $e){
+       echo $e;
+   }
     $pages = ceil($total / $limit);
     $previous = $page_num - 1;
     $next = $page_num + 1;

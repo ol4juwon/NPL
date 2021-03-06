@@ -53,7 +53,7 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav me-auto mb-1 mb-md-1">
         <li class="nav-item active">
-          <a class="nav-link" aria-current="page" href="index.php">Home</a>
+          <a class="nav-link" aria-current="page" href="../index.php">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="sale.php">For Sale</a>
@@ -72,11 +72,11 @@
         </li>
         <?php if(isset($_SESSION['user_first_name'])){ ?>
         <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <a class="nav-link dropdown-toggle" href="../profile.php" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Profile
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="Agents/edit_profile.php">Edit Profile</a></li>
+                    <li><a class="dropdown-item" href="#">Edit Profile</a></li>
                     <li><a class="dropdown-item" href="agents/add_property.php">Add Property</a></li>
                     
                     <li><a class="dropdown-item" href="logout.php">Logout</a></li>
