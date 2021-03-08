@@ -35,17 +35,18 @@ $result = $pdo->query($select_stm);
     $previous = $page_num - 1;
     $next = $page_num + 1;
 
-    
-    echo "  <div class=\"res_bar\" ><div>Results: Page {$page_num} of {$pages} </div><div>";
-        if($page_num != 1){
-            $previous = $page_num-1;
-        echo "<a href=\"sale.php?page={$previous}\">Previous</a>";  }
+    ?>
+   <div class="res_bar"  ><div>Results: Page <?php echo $page_num; ?> of <?php echo $pages; ?> </div><div>
+        <?php if($page_num != 1){
+            $previous = $page_num-1;?>
+        <a href="sale.php?page={$previous}">Previous</a>  <?php }?>
 
-        echo "<a href=\"sale.php?page={$page_num}\">{$page_num}</a>"; 
-        if($next == $pages){
-        echo "<a href=\"sale.php?page={$next}\">Next</a>"; }
-        echo "</div></div><div>";
-       // $rows = $result->fetch(MYSQLI_ASSOC);
+        <a href="sale.php?page=<?php echo $page_num;?>"><?php echo $page_num;?></a>
+        <?php
+        if($next == $pages){?>
+        <a href="sale.php?page=<?php $next;?>">Next</a><?php  }?>
+        </div></div><div>
+            <?php
         foreach($result as $row):?>
             <div><div class="property-card" style="box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
             transition: 0.3s;">
@@ -82,16 +83,21 @@ $result = $pdo->query($select_stm);
    }
     $pages = ceil($total / $limit);
     $previous = $page_num - 1;
-    $next = $page_num + 1;
-    echo "  <div class=\"res_bar\" style=\"\"><div style=\"text-align:left;\" width=\"70% \">Results: Page {$page_num} of {$pages} </div><div style=\"justify-content:right;\" width=\"30%\">";
+    $next = $page_num + 1;?>
+    <div class="res_bar" style=""><div style="text-align:left;" width="70% ">Results:<?php echo $total; ?> Page <?php echo $page_num; ?> of <?php echo $pages; ?> </div><div style="justify-content:right;" width="30%">
+    <?php
     if($page_num != 1){
-        $previous = $page_num-1;
-    echo "<a class=\"btn-light\" href=\"sale.php?page={$previous}\">Previous</a>";  }
+        $previous = $page_num-1;?>
+    <a class="btn-light" href="sale.php?page=<?php echo $previous; ?>">Previous</a> <?php }?>
 
-    echo "<a class=\"btn-light\" href=\"sale.php?page={$page_num}\">{$page_num}</a>"; 
-    if($next == $pages){
-    echo "<a class=\"btn-light\" href=\"sale.php?page={$next}\">Next</a>"; }
-    echo "</div></div>";
+    <a class="btn-light" href="sale.php?page=<?php echo  $page_num;?>"><?php echo $page_num ;?></a>
+    <?php
+    if($next == $pages){ ?>
+    <a class="btn-light" href="sale.php?page=<?php echo $next; ?>">Next</a> 
+    <?php }
+    ?>
+    </div></div>
+    <?php
      foreach($result as $row) :?>
         <div><div class="property-card" style="box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
         transition: 0.3s;">
