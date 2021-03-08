@@ -51,7 +51,9 @@ $result = $pdo->query($select_stm);
         echo "<a href=\"sale.php?page={$page_num}\">{$page_num}</a>"; 
         if($next == $pages){?>
         <a href="sale.php?page=<?php echo $next; ?>">Next</a>";<?php }?>
-        </div></div><div>
+        </div><div><select class="form-control">
+        <option value="">Sort by</option>
+    </select></div></div><div>
        <?php foreach($result as $row): ?>
             <div><div class="property-card" style="box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
             transition: 0.3s;">
@@ -98,7 +100,9 @@ $result = $pdo->query($select_stm);
     if($next == $pages){ ?>
     <a class="btn-light" href="sale.php?page=<?php echo $next; ?>">Next</a>
     <?php }?>
-    </div></div>
+    </div><div><select class="form-control">
+        <option value="">Sort by</option>
+    </select></div></div>
     <?php
      foreach($result as $row) :?>
          <div><div class="property-card" style="box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);

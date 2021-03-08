@@ -100,7 +100,7 @@ include("api/config/config.php");
               </div> <!-- collapse-->
       </div><!-- container fluid-->
     </div><!--  navbar ends  -->
-    <div style="position: absolute; width:100%; height:400px; background-color:white; box-shadow: 2px 4px 8px 0 rgba(0,0,0,0.2);
+    <div style="position: absolute; width:100%;background: linear-gradient(0.87deg, rgba(105, 112, 128, 0.54) 0.69%, rgba(81, 38, 174, 0.28416) 100.48%, rgba(38, 92, 174, 0.00617433) 100.49%, rgba(195, 195, 196, 0.003125) 100.5%, rgba(169, 179, 203, 0.6) 100.51%); height:400px; background-color:white; box-shadow: 2px 4px 8px 0 rgba(0,0,0,0.2);
 ">
 
     </div>
