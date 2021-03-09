@@ -95,24 +95,10 @@ if(isset($_GET['code'])){
 
     <!-- Bootstrap core CSS -->
 <link href="css/bootstrap.css" rel="stylesheet">
-
+<link href="kmk.css" rel="stylesheet">
 <link href="css/default.css" rel="stylesheet">
 
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
+   
 
     
    
@@ -120,8 +106,9 @@ if(isset($_GET['code'])){
 
     </head>
     <body>
+      <div class="content">
         
-<div class="navbar nav-shad navbar-expand-md fixed-top navbar-light bg-white ">
+<div class="navbar nav-shad navbar-expand-md  navbar-light bg-white ">
   <div class="container-fluid">
     <a class="navbar-brand" href="#"><img src="" alt="Logo" ></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -171,37 +158,45 @@ if(isset($_GET['code'])){
     </div>
   </div>
 </div>
-<div style="position: absolute; width:100%; height:400px; background-color:white; box-shadow: 2px 4px 8px 0 rgba(0,0,0,0.2);
-">
+<div class="profile-details">
+  <img src="img/default.jpg" width="300px" height="300px" style="float: right; border-radius:10%;">
+  <span>Name: <?php echo $_SESSION['user_last_name']." ". $_SESSION['user_first_name']; ?> </span> </br> 
+  <span>Email: <?php echo $_SESSION['user_email_address']; ?></span></br>
+  <span>Phone:</span></br>
+  <span> Address:</span></br>
+  <Span>Account Type:</Span></br>
+  <span>Verified Status:</span></br>
+  <a href="agents/edit_profile.php" class="btn" >Edit Profile</a>
+</div>
+<div class="posted">
+ <h2> Your ads are here :</h2>
+</div>
 
-    </div>
-   
-   <div class="content-container"  >
-   <div>
-        <table class="profile" style="top:70px; margin:10px; width: 80%;" >
-        
-            <thead>
-            <th colspan="3" >
-            <img src="<?php  echo  $_SESSION['user_image'];?>" style="border-radius:50%" width="200px" class="img-fluid" >
-            </th>
 
-            </thead>
-            <tr>
-            <td>
-            <?php  echo  $_SESSION['user_first_name']; ?>
-            </td>
-            <td>
-            <?php  echo  $_SESSION['user_last_name']; ?>
-            </td>
-            <td>
-            <?php  echo  $_SESSION['user_email_address']; ?>
-            </td>
-
-            </tr>
-        
-        </table>
-   </div>
-   </div>
-
+<div class="footer"  >
+              <div class="footer-links">
+                Services<br/>
+                <a class="link-light" href="">Home</a><br/>
+                <a class="link-light" href=""  >For Rent</a><br/>
+                <a class="link-light" href="">For Lease</a></br>
+                <a class="link-light" href="">Request</a>
+                <a class="link-light" href="">For Sale</a><br/>
+              </div>
+              <div class="footer-links">
+                Account<br/>
+                <a class="link-light" href="">Register</a><br/>
+                <a class="link-light" href="">Sign Up</a><br/>
+                <a class="link-light" href="">Log in</a><br/>
+                <a class="link-light" href="">Reset Password</a>
+              </div>
+              <div class="footer-links">
+                Terms<br/>
+                <a class="link-light" href="">Terms And Conditions</a><br/>
+                <a class="link-light" href="">Privacy Policy</a><br/>
+                <a class="link-light" href="">Cookies</a><br/>
+              </div>
+              <div class="footer-links">Developers</div>
+            </div>
+      </div>
     </body>
 </html>
