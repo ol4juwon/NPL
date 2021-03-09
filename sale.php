@@ -11,7 +11,7 @@ include("api/config/config.php");
         <meta name="description" content="">
         <meta name="author" content="Ol4juwon">
         <meta name="company" content="Nigeria Property Link">
-        <title> Nigeria Property Link::For sale</title>
+        <title> Nigeria Property Link::For Sale</title>
 <Script src="js/bootstrap.js" ></Script>
         <style type="text/css">
             @font-face {
@@ -25,7 +25,7 @@ include("api/config/config.php");
         
             <!-- Bootstrap core CSS -->
         <link href="css/bootstrap.css" rel="stylesheet">
-        
+        <link href="kmk.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
         
             <style>
@@ -49,6 +49,8 @@ include("api/config/config.php");
           
   </head>
   <body>
+    <div class="content">
+      <div>
     <div class="navbar bx-sh navbar-expand-md navbar-light bg-white ">
       <div class="container-fluid">
               <a class="navbar-brand" href="#">NPL</a>
@@ -96,11 +98,11 @@ include("api/config/config.php");
               </div> <!-- collapse-->
       </div><!-- container fluid-->
     </div><!--  navbar ends  -->
-    <div style="position: absolute; width:100%; height:400px;background: linear-gradient(0.87deg, rgba(105, 112, 128, 0.54) 0.69%, rgba(81, 38, 174, 0.28416) 100.48%, rgba(38, 92, 174, 0.00617433) 100.49%, rgba(195, 195, 196, 0.003125) 100.5%, rgba(169, 179, 203, 0.6) 100.51%); background-color:white; box-shadow: 2px 4px 8px 0 rgba(0,0,0,0.2);
-">
+      </div>
+    <div class="search-home">
 
-    </div>
-    <div class="content-container">
+   <div class="sale">
+    <div class="container">
       <div>    
       <form class="form-inline"  method="GET" action="sale.php?page=1">
           <div class="form-row">
@@ -160,7 +162,10 @@ include("api/config/config.php");
                     
               </form>  
       </div>
-      
+    </div>
+    </div>
+    </div>
+    <div class="results" >
 
       
         
@@ -184,8 +189,31 @@ include("api/config/config.php");
          
       
     </div>
-          
+    <div class="footer"  >
+              <div class="footer-links">
+                Services<br/>
+                <a class="link-light" href="">Home</a><br/>
+                <a class="link-light" href=""  >For Rent</a><br/>
+                <a class="link-light" href="">For Lease</a></br>
+                <a class="link-light" href="">Request</a>
+                <a class="link-light" href="">For Sale</a><br/>
+              </div>
+              <div class="footer-links">
+                Account<br/>
+                <a class="link-light" href="">Register</a><br/>
+                <a class="link-light" href="">Sign Up</a><br/>
+                <a class="link-light" href="">Log in</a><br/>
+                <a class="link-light" href="">Reset Password</a>
+              </div>
+              <div class="footer-links">
+                Terms<br/>
+                <a class="link-light" href="">Terms And Conditions</a><br/>
+                <a class="link-light" href="">Privacy Policy</a><br/>
+                <a class="link-light" href="">Cookies</a><br/>
+              </div>
+              <div class="footer-links">Developers</div>
+            </div>
 
-
+    </div>
   </body>
 </html>

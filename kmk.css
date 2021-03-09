@@ -82,6 +82,10 @@ background-color: rgba(69, 70, 80, 0.4);
         padding-top: 0px;
         overflow: auto;
     }
+    .sale{
+        padding-top: 0px;
+        overflow: auto;
+    }
   }
 .form-edit{
     display: inline-block;

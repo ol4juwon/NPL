@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <?php
 include("api/config/config.php");
- //include("includes/sale_search.php");
  include 'search/rent.php';
  include 'config.php';
 ?>
