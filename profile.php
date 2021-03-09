@@ -159,6 +159,7 @@ if(isset($_GET['code'])){
   </div>
 </div>
 <div class="profile-details">
+  <h1>Profile</h1>
   <img src="img/default.jpg" width="300px" height="300px" style="float: right; border-radius:10%;">
   <span>Name: <?php echo $_SESSION['user_last_name']." ". $_SESSION['user_first_name']; ?> </span> </br> 
   <span>Email: <?php echo $_SESSION['user_email_address']; ?></span></br>
@@ -166,9 +167,9 @@ if(isset($_GET['code'])){
   <span> Address:</span></br>
   <Span>Account Type:</Span></br>
   <span>Verified Status:</span></br>
-  <a href="agents/edit_profile.php" class="btn" >Edit Profile</a>
+  <a href="agents/edit_profile.php" class="btn btn-secondary" >Edit Profile</a>
 </div>
-<div class="posted">
+<div class="posted" style="height: 300px;">
  <h2> Your ads are here :</h2>
 </div>
 
