@@ -35,6 +35,24 @@ align-items: flex-end;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
 }
+.rent{
+    padding-top: 100px;
+    box-shadow: 4px 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    text-align: center;
+    height: 300px;
+}
+.sale {
+    padding-top: 10px;
+    box-shadow: 4px 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    text-align: center;
+    height: 300px;
+}
+.results{
+    margin: 0 auto;
+    margin-top: 50px;
+}
 .welcome>h1{
 font-weight: 700;
 font-family: Roboto;
@@ -59,6 +77,10 @@ background-color: rgba(69, 70, 80, 0.4);
 @media screen and (max-width: 650px) {
     .welcome {
       padding-top: 0px;
+    }
+    .rent{
+        padding-top: 0px;
+        overflow: auto;
     }
   }
 .form-edit{
